@@ -146,3 +146,15 @@ Qwen team for the parent. Panickssery et al for the steering-vector literature. 
   howpublished = {https://huggingface.co/amkkk/AblationWriting-H2-Q08-cone}
 }
 ```
+
+## Field notes, JMQ breakdown
+
+| Domain | Ablated | Baseline | Note |
+|---|---|---|---|
+| arxiv | 18 | 22 | |
+| reddit | 23 | 17 | casual internet, won |
+| story | 14 | 24 | n = 38 |
+| wikihow | 22 | 17 | how-to land, won |
+| wikipedia | 16 | 24 | |
+
+Wins the casual domains and loses the formal ones, the exact inverse of a geometry story. The cone is null here and lexical deletion wins outright, so this card is really a lexical card wearing a cone costume. Quality parity at 0.472, the closest thing to a win on the panel. Case-level color: exports/jmq_case_probe.md.

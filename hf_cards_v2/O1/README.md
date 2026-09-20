@@ -146,3 +146,15 @@ AllenAI for the parent. Panickssery et al for the steering-vector literature. Jo
   howpublished = {https://huggingface.co/amkkk/AblationWriting-H2-O1-cone}
 }
 ```
+
+## Field notes, JMQ breakdown
+
+| Domain | Ablated | Baseline | Note |
+|---|---|---|---|
+| arxiv | 27 | 13 | the heroic cell, carries pooled arxiv |
+| reddit | 14 | 26 | |
+| story | 12 | 28 | |
+| wikihow | 8 | 32 | the specialist tax |
+| wikipedia | 13 | 27 | |
+
+The specialist: arxiv or nothing. Weak frozen model overall, taken to TEST to fail honestly, and it responded by winning exactly one domain decisively. Fidelity rationales favor ablation here more than anywhere else. Case-level color: exports/jmq_case_probe.md.

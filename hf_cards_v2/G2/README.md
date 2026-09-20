@@ -145,3 +145,15 @@ Google for the parent. Panickssery et al for the steering-vector literature. Joa
   howpublished = {https://huggingface.co/amkkk/AblationWriting-H2-G2-cone}
 }
 ```
+
+## Field notes, JMQ breakdown
+
+| Domain | Ablated | Baseline | Note |
+|---|---|---|---|
+| arxiv | 21 | 19 | |
+| reddit | 10 | 30 | hates the casual internet |
+| story | 21 | 19 | |
+| wikihow | 21 | 19 | suspiciously consistent |
+| wikipedia | 25 | 15 | the only wiki win on the panel |
+
+Three 21-19s and a wiki outlier, the most well-rounded card here. And the punchline: the judge prefers these outputs to actual human writing. The judge is a taste machine, not a human, see appendix H in the paper. So close to human the broken meter cannot tell. Case-level color: exports/jmq_case_probe.md.

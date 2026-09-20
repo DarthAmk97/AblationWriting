@@ -146,3 +146,15 @@ Llama team for the parent. Panickssery et al for the steering-vector literature.
   howpublished = {https://huggingface.co/amkkk/AblationWriting-H2-L1-cone}
 }
 ```
+
+## Field notes, JMQ breakdown
+
+| Domain | Ablated | Baseline | Note |
+|---|---|---|---|
+| arxiv | 16 | 24 | outgunned |
+| reddit | 11 | 29 | |
+| story | 17 | 23 | |
+| wikihow | 8 | 12 | n = 20, refusals ate half the cell |
+| wikipedia | 9 | 29 | |
+
+22 of the 24 bilateral-refusal exclusions on the whole panel live here. The cone overlaps the refusal direction and retention sits at 0.61, see the L1 exhibit in the paper methods. Refusal rides along, it does not drive. Case-level color: exports/jmq_case_probe.md.

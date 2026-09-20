@@ -146,3 +146,15 @@ Qwen team for the parent. Panickssery et al for the steering-vector literature. 
   howpublished = {https://huggingface.co/amkkk/AblationWriting-H2-Q20-cone}
 }
 ```
+
+## Field notes, JMQ breakdown
+
+| Domain | Ablated | Baseline | Note |
+|---|---|---|---|
+| arxiv | 20 | 20 | dead even |
+| reddit | 17 | 23 | |
+| story | 16 | 24 | |
+| wikihow | 14 | 26 | |
+| wikipedia | 5 | 34 | the judge has seen enough |
+
+Biggest cone on the panel at +0.411 and the judge shrugged at 0.363. Gentle strength won the freeze where force failed on the family twin, LEX ties at the top, grammar rationales favor baseline 72 to 16 panel-wide. Humanizes distributions, not taste. Case-level color: exports/jmq_case_probe.md.
