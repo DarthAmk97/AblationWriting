@@ -1,0 +1,63 @@
+{
+  "bandwidth": 1.393513228752628,
+  "bandwidth_source": "VAL2 human+baseline only",
+  "block_size": 128,
+  "embedder": "nvidia/llama-embed-nemotron-8b",
+  "embedding_max_length": 4096,
+  "frozen": "H2-full-s3-O1-W-BEST-r2-a0.75-rho0.5-cone",
+  "headline": "sqrt(max(biased MMD2, 0))",
+  "kernel": "exp(-squared_euclidean / (2 * bandwidth^2))",
+  "model": "O1",
+  "pooling": "attention-mask mean in FP32, then L2 normalize",
+  "revision": "aa3b43a495a9b280d1bdb716da37c54bb495d630",
+  "splits": {
+    "test": {
+      "ablated_vs_human": {
+        "mmd": 0.09189393168556113,
+        "mmd2_biased": 0.008444494680630577,
+        "mmd2_unbiased": 0.008057398765719759
+      },
+      "baseline_vs_human": {
+        "mmd": 0.10940985859378673,
+        "mmd2_biased": 0.011970517157512406,
+        "mmd2_unbiased": 0.011584708477836658
+      },
+      "embedding_digest": "76207081cf5482aea373c9f10f49678bf50e95a3d34d629f05d005a31278d076",
+      "human_vs_human_floor": {
+        "assignment": "sha256('mmd-human-floor:' + prompt_id), sorted then halved",
+        "mmd": 0.027587675654006726,
+        "mmd2_biased": 0.0007610798479906755,
+        "mmd2_unbiased": -1.3429419271071552e-05,
+        "n_left": 1000,
+        "n_right": 1000
+      },
+      "n": 2000,
+      "recovery_mmd": 0.2140730823707927,
+      "source_digest": "61820c67266fa11a1acd928b6cf3dde832d8308f95e8b44408ba316cf6c01cd3"
+    },
+    "val2": {
+      "ablated_vs_human": {
+        "mmd": 0.09477431274565043,
+        "mmd2_biased": 0.008982170356410357,
+        "mmd2_unbiased": 0.007469597538507511
+      },
+      "baseline_vs_human": {
+        "mmd": 0.11146129039828828,
+        "mmd2_biased": 0.01242361925725155,
+        "mmd2_unbiased": 0.010915880192339245
+      },
+      "embedding_digest": "a382f32e8d9a7cb466523b68638f0aba3a145ea5b58f8547da5a1db287009184",
+      "human_vs_human_floor": {
+        "assignment": "sha256('mmd-human-floor:' + prompt_id), sorted then halved",
+        "mmd": 0.054902034716270864,
+        "mmd2_biased": 0.0030142334159866113,
+        "mmd2_unbiased": -1.367819313546903e-05,
+        "n_left": 256,
+        "n_right": 256
+      },
+      "n": 512,
+      "recovery_mmd": 0.2950353121061908,
+      "source_digest": "f65db6f73a3c0b21bd377e69c37fc696fdae2d7049ea94c078994d8cef225a52"
+    }
+  }
+}

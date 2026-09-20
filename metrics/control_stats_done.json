@@ -1,0 +1,37 @@
+{
+  "bootstrap_replicates": 10000,
+  "created_at_utc": "2026-09-20T21:52:48.911620+00:00",
+  "embed_revision": "aa3b43a495a9b280d1bdb716da37c54bb495d630",
+  "embedder": "nvidia/llama-embed-nemotron-8b",
+  "epoch_fingerprint": "78102ddde626c6682392ebeb22f18a395983e69d008169d1d8083d214cfa1397",
+  "epoch_id": "H2-MRSC-400-v5-rand-only",
+  "eval_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "eval_tokenizer": "Qwen/Qwen3.5-0.8B",
+  "hashes": {
+    "metrics/control_bootstrap.parquet": "46bcc9e6fe833c57ea146e46e74e3125e5f3ebde05dee7f72724b4aff6a22e7e",
+    "metrics/control_metrics.parquet": "bbe005cda4e8246ba8b9f19038618afa9975074714a34a34f7f66cb002ebd41d",
+    "metrics/tables/controls.md": "1687b3f148e4a5aed2727eca76fe9a4cc2566eb6db03e17138d729befa341285"
+  },
+  "implementation_sha256": "267607b2d606c59a6750c7eb34f8acfe21640dcd707e6fb2ba111b46ef9230df",
+  "model_metrics_sha256": {
+    "G2": "7b80ce7f5e379f8d34c0d8d4fc184ba94132c65fd57a1371698bf8c0ec85920c",
+    "L1": "8fcfb43f3b0a7fd58c56e4b61b4e78d8388b682ee51820a2508def73d6225198",
+    "O1": "9acf94b4ace14bca5da4417b734f4626afa8edf1462259d42e6b45b7fc1d5d20",
+    "Q08": "5fe2ba2230670c5a400c0f40df46571423493d91e87f8b2bc86cf595ddad99a2",
+    "Q20": "aaf7b39a2bfbd0850cb534f21ee0e9c86422a626f97a47c4a46eb8ed2e1d04a6"
+  },
+  "models": [
+    "L1",
+    "O1",
+    "Q08",
+    "Q20",
+    "G2"
+  ],
+  "rows": 175,
+  "runtime_strata": {
+    "test_jmq": "contemporaneous-v5-runtime",
+    "val2": "archived-original-runtime"
+  },
+  "schema_version": "h2-mrsc-400.stats-done.v5",
+  "suite": "H2-MRSC-400-v5"
+}

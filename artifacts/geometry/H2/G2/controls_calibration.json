@@ -1,0 +1,172 @@
+{
+  "alpha_limit": 4.0,
+  "alphas": {
+    "RAND-RANK-DOSE": {
+      "11": 0.8216795232411463,
+      "12": 0.8216795232411463,
+      "13": 0.8216795232411463,
+      "14": 0.8216795232411463,
+      "15": 0.8216795232411463,
+      "16": 0.8216795232411463
+    }
+  },
+  "basis_sha256": "c4bc1ab5a7ab5c00bfde0982870fa4ecf20c667c0439802c7ef7e6d607399321",
+  "epoch_fingerprint": "78102ddde626c6682392ebeb22f18a395983e69d008169d1d8083d214cfa1397",
+  "epoch_id": "H2-MRSC-400-v5-rand-only",
+  "layers": {
+    "11": {
+      "alphas": {
+        "RAND-RANK-DOSE": 0.8216795232411463
+      },
+      "target_frozen_dose": 4.360688034365841,
+      "tokens": 47033,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 4.9214887612043885
+      }
+    },
+    "12": {
+      "alphas": {
+        "RAND-RANK-DOSE": 0.8216795232411463
+      },
+      "target_frozen_dose": 4.389084663607795,
+      "tokens": 47033,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 5.563061449228298
+      }
+    },
+    "13": {
+      "alphas": {
+        "RAND-RANK-DOSE": 0.8216795232411463
+      },
+      "target_frozen_dose": 3.7828024488235648,
+      "tokens": 47033,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 5.476458588235624
+      }
+    },
+    "14": {
+      "alphas": {
+        "RAND-RANK-DOSE": 0.8216795232411463
+      },
+      "target_frozen_dose": 2.7091600257620514,
+      "tokens": 47033,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 5.39688787760921
+      }
+    },
+    "15": {
+      "alphas": {
+        "RAND-RANK-DOSE": 0.8216795232411463
+      },
+      "target_frozen_dose": 7.3661134151626895,
+      "tokens": 47033,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 8.090222975722273
+      }
+    },
+    "16": {
+      "alphas": {
+        "RAND-RANK-DOSE": 0.8216795232411463
+      },
+      "target_frozen_dose": 7.075932928550756,
+      "tokens": 47033,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 6.6776211954584515
+      }
+    }
+  },
+  "lexical_application": {
+    "application_test_jmq": {
+      "absolute_magnitude_ratio": 10.613025038429722,
+      "baseline_l2_1": 0.027474809027845496,
+      "h2_direction": "away-from-human",
+      "h2_l2_1": 0.0275781762583347,
+      "h2_signed_shift": 0.00010336723048920415,
+      "lex_direction": "toward-human",
+      "lex_l2_1": 0.026377770022510436,
+      "lex_signed_shift": -0.0010970390053350598,
+      "matched": false,
+      "same_direction": false
+    },
+    "test_deleted_occurrences": 1282
+  },
+  "lexical_policy_sha256": "39de0004a6d5a0db38c3f8ec626e1565ead7df35b04ccb44a9dd11166c2eeaf7",
+  "matching": "total-dose: one alpha per arm matches summed layer doses; same value applied at every layer",
+  "model": "G2",
+  "overflow_policy": "fail-not-clip",
+  "plan_sha256": "013f8818a5fbb530e921a8f0a56a66b9dd04c3402f44765d865daf9eb2015029",
+  "prompt_ids": [
+    "3449",
+    "4771",
+    "670",
+    "1880",
+    "2388",
+    "3249",
+    "4541",
+    "696",
+    "1057",
+    "2840",
+    "3063",
+    "4098",
+    "692",
+    "1242",
+    "2941",
+    "3334",
+    "4806",
+    "372",
+    "1083",
+    "2173",
+    "3282",
+    "4435",
+    "694",
+    "1942",
+    "2242",
+    "3261",
+    "4842",
+    "87",
+    "1316",
+    "2191",
+    "3292",
+    "4935",
+    "37",
+    "1694",
+    "2940",
+    "3550",
+    "4732",
+    "557",
+    "1304",
+    "2439",
+    "3085",
+    "4201",
+    "81",
+    "1000",
+    "2888",
+    "3888",
+    "4709",
+    "781",
+    "1252",
+    "2558",
+    "3215",
+    "4489",
+    "433",
+    "1577",
+    "2148",
+    "3926",
+    "4510",
+    "314",
+    "1953",
+    "2588",
+    "3118",
+    "4552",
+    "240",
+    "1589"
+  ],
+  "runtime_fingerprint_sha256": "2d8eaf66a270b7e398f086b1d11c1d879746611370412aa25b8c228ebe99baf7",
+  "schema_version": "h2-mrsc-400.calibration.v5",
+  "source_sha256": "7a6ddacd3603b75c37cd7eeff1036298190a83828a1bdbe83ae2ecce4fe5e686",
+  "suite": "H2-MRSC-400-v5",
+  "total_target_dose": 29.6837815162727,
+  "total_unit_doses": {
+    "RAND-RANK-DOSE": 36.125740847458246
+  }
+}

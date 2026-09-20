@@ -1,0 +1,31 @@
+{
+  "batch_size": 1,
+  "copied_core_rows": 1936,
+  "core_hashes": {
+    "artifacts/geometry/H2/O1/mmd_done.json": "d2ec523b9a7adefc20bf2a110b4a659b84ce3ce4c8530150c5dc3c3c08c09fd2",
+    "artifacts/geometry/H2/O1/mmd_embeddings_test.parquet": "a1d8e0ac090676b75e3fcc7e49261ff2be2082eb9a52686d28e55fd157cb0a5c",
+    "artifacts/geometry/H2/O1/mmd_embeddings_val2.parquet": "b9caeade0577f2efbb8d38dbb5b90890400a14f086e2396e29a8498ef8cddef5",
+    "artifacts/geometry/H2/O1/mmd_metrics.json": "7d121546bc0161e05a85bb96f342e3b969e395cad58c646c31bf79812c912640"
+  },
+  "created_at_utc": "2026-09-20T10:38:50.262852+00:00",
+  "dtype": "bfloat16",
+  "embed_plan_sha256": "73d7454051d8eb36162b1cc906e490b736ca4653a9625e3ab6051c805add1357",
+  "embedder": "nvidia/llama-embed-nemotron-8b",
+  "embeddings_sha256": "77af50472883a0f5cc57c11df3be0b289b4628bb82f8aecf194f162c576764a3",
+  "epoch_fingerprint": "78102ddde626c6682392ebeb22f18a395983e69d008169d1d8083d214cfa1397",
+  "epoch_id": "H2-MRSC-400-v5-rand-only",
+  "equivalence_status": "pass",
+  "generation_sha256": "06b3d834f6138e01df63668fa577b8490c92958b771a7a1dd3bd6bfffda06813",
+  "max_length": 4096,
+  "model": "O1",
+  "new_rows": 2112,
+  "plan_sha256": "39b02665f10de2063e42bad3ae95e6a3ff4d3ad9a11191c97297ca75530c697a",
+  "pooling": "attention-mask mean in FP32, then L2 normalize",
+  "revision": "aa3b43a495a9b280d1bdb716da37c54bb495d630",
+  "rows": 4048,
+  "runtime_fingerprint_sha256": "a5ef8ad02ddf29f939f51416b2012d4f971ed9752a98822f8133448a026ecd40",
+  "schema_version": "h2-mrsc-400.embed-done.v5",
+  "source_sha256": "22dc0e5266642b081eb0af697921081d9c524a595ab3e93d83cf4a6edbc89a28",
+  "suite": "H2-MRSC-400-v5",
+  "val1_anchors_sha256": "9868416842d5d1cf55d8cf3238965f69fc9842b25a3477f21eaba2b1e96e1709"
+}

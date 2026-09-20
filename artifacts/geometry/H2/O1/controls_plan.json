@@ -1,0 +1,205 @@
+{
+  "arms": {
+    "cpu_test": [
+      "LEX-MATCH"
+    ],
+    "generated_test": [
+      "ANCHOR-BASE",
+      "ANCHOR-CONE",
+      "RAND-RANK-DOSE"
+    ],
+    "reused_test": [
+      "HUMAN"
+    ],
+    "reused_val2": [
+      "HUMAN",
+      "VAL2-BASE",
+      "VAL2-CONE",
+      "FULL-SYM"
+    ],
+    "test_jmq": [
+      "HUMAN",
+      "ANCHOR-BASE",
+      "ANCHOR-CONE",
+      "RAND-RANK-DOSE",
+      "LEX-MATCH"
+    ],
+    "val1": [
+      "ANCHOR-BASE",
+      "ANCHOR-CONE"
+    ],
+    "val2": [
+      "HUMAN",
+      "VAL2-BASE",
+      "VAL2-CONE",
+      "FULL-SYM"
+    ]
+  },
+  "budget_gpu_hours": {
+    "hard_cap": 72,
+    "nominal": [
+      45,
+      51
+    ],
+    "reason": "contemporaneous TEST baseline/cone plus VAL1-96 anchors; PC1 dropped"
+  },
+  "checkpoint_prompts": 16,
+  "counts": {
+    "dose_calibration_val1": 64,
+    "lexical_calibration_val1": 96,
+    "runtime_reconstruction_test_jmq": 8,
+    "test_jmq": 400,
+    "val1_contemporaneous_anchors": 96,
+    "val2": 512
+  },
+  "dose_calibration": {
+    "matching": "total-dose: one alpha per arm; same value applied at every frozen layer",
+    "maximum_alpha": 4.0,
+    "overflow": "fail; never clip",
+    "split": "first fixed 64 VAL1 rows",
+    "statistic": "mean generated-token L2 removal norm per layer",
+    "target": "summed frozen-cone dose across layers at unit-dose removal"
+  },
+  "dropped_arms": {
+    "PC1-DOSE": "infeasible under dose matching: v2 per-layer alpha 25.15 (L1 layer 8), v3 total-dose alpha 16.83 (L1), cap 4.0; nested top direction carries ~1/17 of cone removal; recorded as multidirectionality evidence, not generated"
+  },
+  "epoch_fingerprint": "78102ddde626c6682392ebeb22f18a395983e69d008169d1d8083d214cfa1397",
+  "epoch_id": "H2-MRSC-400-v5-rand-only",
+  "eval_tokenizer": {
+    "model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17"
+  },
+  "frozen": {
+    "alpha": 0.75,
+    "layers": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "rank": 2,
+    "rho": 0.5,
+    "run_id": "H2-full-s3-O1-W-BEST-r2-a0.75-rho0.5-cone",
+    "window": "W-BEST"
+  },
+  "full_sym_config": "W-BEST-r2-a0.75-rho0.5-full",
+  "immutable_runtime_sources": {
+    "src/h2_lib.py": "edcb255a053b08879b0a3b0fd8162c284b9255ee6ec8d846bd41460b2b117f28",
+    "src/smoke_h2.py": "751a399e598ba5590bfa57646d9caaed4b783068e91836ad402295726eb8ca9c"
+  },
+  "implementation_sha256": "d8a1b24c8d4207e22c7572f11bfbcc28583fef83e93242ab4b6a5056a72d05e6",
+  "lexical_control": {
+    "K": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "calibration": "contemporaneous no-hook/frozen-cone generations on first 96 VAL1 rows",
+    "deletion": "int(sha256('H2-MRSC|LEX|<mid>|<prompt_id>|<token_position>'),16) < q*2**256; token_position is zero-based",
+    "matched": "same direction and absolute magnitude ratio in [0.8,1.25]",
+    "q": [
+      0.125,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "ranking": "positive baseline-minus-human unigram excess, descending squared excess",
+    "selection": "min |absolute L2-1 shift(LEX)-absolute L2-1 shift(H2)|; ties fewer deleted occurrences, lower q, lower K"
+  },
+  "model": "O1",
+  "model_id": "allenai/OLMo-2-0425-1B-Instruct",
+  "model_loading": {
+    "default": "local_files_only=True",
+    "eval_cache_env": "H2_CONTROLS_EVAL_CACHE",
+    "network_opt_in": "H2_CONTROLS_ALLOW_NETWORK=1",
+    "revision_policy": "manifest-pinned exact revision"
+  },
+  "model_revision": "48d788eca847d4d7548f375ad03d3c9312f6139e",
+  "pc1_basis": "exact frozen final cleaned/QR basis first column: frozen[:, :1]",
+  "plan_sha256": "39b02665f10de2063e42bad3ae95e6a3ff4d3ad9a11191c97297ca75530c697a",
+  "runtime_reconstruction_preflight": {
+    "archive_replay": "environment-identity diagnostic only; never hook-equivalence evidence",
+    "arms": [
+      "ANCHOR-BASE",
+      "ANCHOR-CONE"
+    ],
+    "failure": "abort before dose calibration or new controls",
+    "gate": "same-runtime immutable smoke_h2.generate_batch/generate_with_hooks versus new no-hook/GeneratedTokenHook exact token/text equivalence",
+    "split": "first fixed 8 TEST-JMQ rows"
+  },
+  "runtime_strata": {
+    "pooling_policy": "never pool absolute outputs across runtime strata",
+    "test_jmq": "contemporaneous-v5-runtime",
+    "val1": "contemporaneous-v5-runtime",
+    "val2": "archived-original-runtime"
+  },
+  "sampler": {
+    "batch_size": 1,
+    "do_sample": true,
+    "dtype": "bfloat16",
+    "max_new_tokens": 1024,
+    "repetition_penalty": 1.0,
+    "temperature": 0.8,
+    "top_k": 50,
+    "top_p": 0.95
+  },
+  "schema_version": "h2-mrsc-400.plan.v5",
+  "seed": {
+    "base": 1000,
+    "modulus": 2147483647,
+    "prompt_rule": "(1000 + int(sha256(prompt)[:8],16)) % (2**31-1)",
+    "random_basis_by_layer": {
+      "10": 247160721,
+      "11": 1361747316,
+      "8": 1891818983,
+      "9": 1328360637
+    },
+    "random_basis_rule": "(17011 + int(sha256(\"H2-MRSC|RAND|<mid>|<layer>\")[:8],16)) % 2147483647"
+  },
+  "semantic_hashes": {
+    "frozen_record": "656e210219aa6b1a3432089a6b3277487487cc6c9f5a48291217d2fcc5c5b4e7",
+    "test_archive": "862651b2f03d5ebd2ed99dfc73f6bbfecf34a5442198f2eca45eb108bd5f363d",
+    "test_jmq": "40fbbd2244679c19240be5e1ba15eb759a1787b8ed17ee3d891348766ce2d960",
+    "val1_calibration": "17329d0b65444b18c6bb1874ca7fd173b55092e89f5f380eb0fc8d0e7efabd3a",
+    "val1_lexical_calibration": "7667add828cd914bdf122331e1d371780f0e63d1b61f88ee742e91ea0601012d",
+    "val2_full_sym": "b3491ec8527770856e38b5683f31f0e84290e0e1c56979d0f49bc1bb73c8a9b6"
+  },
+  "source_files": {
+    "artifacts/geometry/H2/O1/frozen.json": "cb423068183ffb1886366304431c0f678e27b03a12adf946511f6d7bf1ed795e",
+    "artifacts/geometry/H2/O1/full_layer08.npz": "a61268a84919a779202306cf2bb6be87cc5c9033816e3f9d8ddb269913c0b2c0",
+    "artifacts/geometry/H2/O1/full_layer09.npz": "17d2c49158d85245f93d18bf4601c64aa39ba00f045db8b76adb61d599a41af5",
+    "artifacts/geometry/H2/O1/full_layer10.npz": "5838b90ae84ec83a7b6d8b0ffe583f9681e8b70831b67347c1bd2f225dd606d0",
+    "artifacts/geometry/H2/O1/full_layer11.npz": "fbb2099caaca03d910adb8f40b59f42cbfd40b67e41534c2ded5c77d8cdf119f",
+    "artifacts/geometry/H2/O1/s3_generations.parquet": "a166e2757f0a9ae8d811eab53e11c44a5c7ce04f993e8ba140246b02b095390f",
+    "artifacts/geometry/H2/O1/test_done": "59f4de859204d70238ad4b882057ce4b6565cc874c289b439731bfb6ede181b2",
+    "artifacts/geometry/H2/O1/test_generations.parquet": "55dea4570f725a0d357a0b26abfe188b10121947d3569ad7983329436b61b381",
+    "artifacts/geometry/H2/O1/test_metrics.json": "5846a07fb091291ae51ca21a0f3a630a38eded97b5197940cda86c03271ce596",
+    "data/splits/test.jsonl": "146ca671cbe64eca60949c1680f83ca8e816288ba5afbf3ed3530fa466771934",
+    "data/splits/test_jmq.jsonl": "8d29a11510c813bbb0689126fb6a9feaed8b73dd315eee328c5b8cc1101eb5e6",
+    "data/splits/val1.jsonl": "e5c71a04cd01e939a270b73293ec81ac42c09ff577d949c16756c39d256bf62c",
+    "data/splits/val2.jsonl": "ff89e144bc3f8ab32ae011f77cb478e5218cee68a20404d7207966a1e817fde5",
+    "manifest.yaml": "667e0efaad85b40c568c1f7e99f9ae3c38a9d7e2e6ae124d56acfbc97195422b",
+    "src/h2_lib.py": "edcb255a053b08879b0a3b0fd8162c284b9255ee6ec8d846bd41460b2b117f28",
+    "src/smoke_h2.py": "751a399e598ba5590bfa57646d9caaed4b783068e91836ad402295726eb8ca9c"
+  },
+  "source_sha256": "22dc0e5266642b081eb0af697921081d9c524a595ab3e93d83cf4a6edbc89a28",
+  "suite": "H2-MRSC-400-v5",
+  "supersedes": {
+    "adoptable": [
+      "controls_generations.progress.parquet",
+      "controls_val1_anchors.parquet"
+    ],
+    "epoch": "H2-MRSC-400-v4",
+    "reason": "v4 lex-merge defect; generation semantics unchanged",
+    "regenerated": [
+      "equivalence gate",
+      "dose calibration",
+      "lexical policy",
+      "completion markers"
+    ]
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "alpha_limit": 4.0,
+  "alphas": {
+    "RAND-RANK-DOSE": {
+      "11": 0.2797705159935842,
+      "12": 0.2797705159935842,
+      "13": 0.2797705159935842,
+      "14": 0.2797705159935842,
+      "15": 0.2797705159935842
+    }
+  },
+  "basis_sha256": "e0c19f3e1be0eb62c34b9a470b21093167df2b609df1e20582f6d600098bfa8e",
+  "epoch_fingerprint": "78102ddde626c6682392ebeb22f18a395983e69d008169d1d8083d214cfa1397",
+  "epoch_id": "H2-MRSC-400-v5-rand-only",
+  "layers": {
+    "11": {
+      "alphas": {
+        "RAND-RANK-DOSE": 0.2797705159935842
+      },
+      "target_frozen_dose": 0.30152281717870527,
+      "tokens": 35275,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 1.1643469883886997
+      }
+    },
+    "12": {
+      "alphas": {
+        "RAND-RANK-DOSE": 0.2797705159935842
+      },
+      "target_frozen_dose": 0.3498421054313911,
+      "tokens": 35275,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 1.3045903027142134
+      }
+    },
+    "13": {
+      "alphas": {
+        "RAND-RANK-DOSE": 0.2797705159935842
+      },
+      "target_frozen_dose": 0.5388342724929542,
+      "tokens": 35275,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 1.7871046821738201
+      }
+    },
+    "14": {
+      "alphas": {
+        "RAND-RANK-DOSE": 0.2797705159935842
+      },
+      "target_frozen_dose": 0.6980625098432572,
+      "tokens": 35275,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 2.1836656028382917
+      }
+    },
+    "15": {
+      "alphas": {
+        "RAND-RANK-DOSE": 0.2797705159935842
+      },
+      "target_frozen_dose": 0.6067322682447251,
+      "tokens": 35275,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 2.4782942523844778
+      }
+    }
+  },
+  "lexical_application": {
+    "application_test_jmq": {
+      "absolute_magnitude_ratio": 1.3148022724857777,
+      "baseline_l2_1": 0.029325236405210113,
+      "h2_direction": "away-from-human",
+      "h2_l2_1": 0.03150245908052722,
+      "h2_signed_shift": 0.0021772226753171073,
+      "lex_direction": "toward-human",
+      "lex_l2_1": 0.026462619083995616,
+      "lex_signed_shift": -0.0028626173212144973,
+      "matched": false,
+      "same_direction": false
+    },
+    "test_deleted_occurrences": 28606
+  },
+  "lexical_policy_sha256": "cbd76b016e83670966481941ebc3d58e182a2e7b4b7e48c51ed82c03eaac289c",
+  "matching": "total-dose: one alpha per arm matches summed layer doses; same value applied at every layer",
+  "model": "Q20",
+  "overflow_policy": "fail-not-clip",
+  "plan_sha256": "ffdcd172efcc94f91d6d2e2415fce4a4b73a72a1f8612cb64d56a6184ef1354e",
+  "prompt_ids": [
+    "3449",
+    "4771",
+    "670",
+    "1880",
+    "2388",
+    "3249",
+    "4541",
+    "696",
+    "1057",
+    "2840",
+    "3063",
+    "4098",
+    "692",
+    "1242",
+    "2941",
+    "3334",
+    "4806",
+    "372",
+    "1083",
+    "2173",
+    "3282",
+    "4435",
+    "694",
+    "1942",
+    "2242",
+    "3261",
+    "4842",
+    "87",
+    "1316",
+    "2191",
+    "3292",
+    "4935",
+    "37",
+    "1694",
+    "2940",
+    "3550",
+    "4732",
+    "557",
+    "1304",
+    "2439",
+    "3085",
+    "4201",
+    "81",
+    "1000",
+    "2888",
+    "3888",
+    "4709",
+    "781",
+    "1252",
+    "2558",
+    "3215",
+    "4489",
+    "433",
+    "1577",
+    "2148",
+    "3926",
+    "4510",
+    "314",
+    "1953",
+    "2588",
+    "3118",
+    "4552",
+    "240",
+    "1589"
+  ],
+  "runtime_fingerprint_sha256": "df7296c35f35c98b0a87096e557f8e1a1466f30a9ce402b35d697c7aebecc082",
+  "schema_version": "h2-mrsc-400.calibration.v5",
+  "source_sha256": "a8f862c8fb3c8f43fc8664369503c501093b9b462a56d8f5f2848e6c666b5761",
+  "suite": "H2-MRSC-400-v5",
+  "total_target_dose": 2.494993973191033,
+  "total_unit_doses": {
+    "RAND-RANK-DOSE": 8.918001828499502
+  }
+}

@@ -1,0 +1,114 @@
+# manifest.yaml — frozen revisions + env (Sec 18.1). Updated as runs freeze revisions. PRE-TEST.
+project: AblationWriting-H2
+hypothesis: H2 selective low-rank concept-cone ablation of post-training writing collapse
+paradigm: training-free w.r.t target weights; unsupervised geometry only (means/cov/SVD/whitening/QR/clustering for analysis)
+title: "The Geometry of Machine Writing: Training-Free Selective Ablation of Post-Training Writing Collapse"
+date_utc: "2026-09-07"
+git_commit: TBD
+instance:
+  gpu: RTX 3090 24GB
+  driver: 580.173.02
+  cuda_installed: "12.8"
+  driver_max_cuda: "13.0"
+  compute_capability: "8.6"
+  ram_min_gb: 32
+  storage_nvme_gb_free: 564
+  workspace_is_volume: false
+  scope_dir: /root/AblationWriting
+  hf_cache_isolated: /root/AblationWriting/.hf_cache
+precision: BF16 headline (FP16 where model requires); no quantization for discovery
+models:
+  Q08: {hf: Qwen/Qwen3.5-0.8B, sha: 2fc06364715b967f1860aea9cf38778875588b17, family: Qwen3.5, role: cheap dev + full, multimodal: true, arch: Qwen3_5ForConditionalGeneration}
+  Q20: {hf: Qwen/Qwen3.5-2B, sha: 15852e8c16360a2fea060d615a32b45270f8a8fc, family: Qwen3.5, role: full, multimodal: true}
+  G2: {hf: google/gemma-4-E2B-it, sha: 3e22461f65e89153144f8adb70e3b8c2cc9845a7, family: Gemma4, role: full, multimodal: true}
+  G4: {hf: google/gemma-4-E4B-it, sha: ee0ef6023621cff504d758262d4e04895a5af4a2, family: Gemma4, role: full, multimodal: true}
+  L1: {hf: meta-llama/Llama-3.2-1B-Instruct, sha: 9213176726f574b556790deb65791e0c5aa438b6, family: Llama3.2, role: cross-family, gated_403_pending: true}
+  O1: {hf: allenai/OLMo-2-0425-1B-Instruct, sha: 48d788eca847d4d7548f375ad03d3c9312f6139e, family: OLMo2, arch: Olmo2ForCausalLM, hidden: 2048, layers: 16}
+  LF12: {hf: LiquidAI/LFM2-1.2B, sha: 40f3da0d0164913923aee9462c23077868b816a3, family: LFM2, arch: Lfm2ForCausalLM, hidden: 2048, layers: 16}
+  S3: {hf: HuggingFaceTB/SmolLM3-3B, sha: a07cc9a04f16550a088caea529712d1d335b0ac1, family: SmolLM, arch: SmolLM3ForCausalLM, hidden: 2048, layers: 36}
+tokenizer_eval:
+  primary: Qwen/Qwen3.5-0.8B frozen revision (same sha as Q08)
+  sensitivity: GPT-2 BPE
+embedding:
+  model: nvidia/llama-embed-nemotron-8b
+  sha: aa3b43a495a9b280d1bdb716da37c54bb495d630
+  kernel: Gaussian RBF, bandwidth median heuristic on combined human+baseline VAL, frozen for TEST
+datasets:
+  GEN: {hf: szyszy/GEN, sha: a0f143c1ae9c35b684898a5f9c0ab6efb49be486}
+  PAIRED: {hf: dmitva/human_ai_generated_text, sha: dacfc1bc7960967bb515a46e66b07e33bb081ddf}
+  StoryScope: {ref: Russell et al arXiv:2604.03136, prompts_frozen: 100, feature_rev: TBD, code_rev: TBD}
+sampler_headline:
+  temperature: 0.8
+  top_p: 0.95
+  top_k: 50
+  repetition_penalty: 1.0
+  seed: deterministic per prompt ID, same seed baseline+ablations
+  max_new_tokens: 1024 (reference-length-informed cap)
+  stop: official chat template only
+  locus: generated-token residual stream only (prefill untouched; prefill+generation is appendix)
+intervention:
+  form_headline: "h' = h - alpha*B*max(B^T(h-muH),0) per generated token"
+  form_control: "h' = h - alpha*B*B^T(h-muH)"
+  ranks: [2, 4, 8, 16, 32]
+  alphas: [0.25, 0.5, 0.75, 1.0]
+  rhos: [0.5, 0.75, 1.0]
+  cleaning: "implemented native-space B_clean = orth[(I - rho*P*P^T) B_raw], with P from eight native-space protected contrasts"
+controls:
+  suite: H2-MRSC-400-v5
+  epoch_id: H2-MRSC-400-v5-rand-only
+  status: frozen-post-TEST-v5
+  protocol: CONTROL_PROTOCOL.md
+  models: [L1, O1, Q08, Q20, G2]
+  new_gpu_arms: [ANCHOR-BASE, ANCHOR-CONE, RAND-RANK-DOSE]
+  dropped_arms: [PC1-DOSE]
+  reused_arms: [HUMAN, FULL-SYM]
+  cpu_arm: LEX-MATCH
+  main_split: TEST-JMQ-400
+  runtime_strata: {test_jmq: contemporaneous-v2-runtime, val2: archived-original-runtime}
+  budget_gpu_hours: {nominal: "58-64", hard_cap: 72}
+judge_JMQ:
+  provider: opencode-go
+  model_id: muse-spark-1.3-contributor
+  transport: authenticated OpenCode CLI
+  structure: DEFT-compatible blind pairwise, hash-randomized order; overall quality completed, fine-grained dimensions not run
+  formula: "score = P(a wins) + 0.5*P(tie); JMQ_H = 2*score(model,human), 1.0 = parity; JMQ_delta = score(H2,baseline)"
+  tie_handling: "tie = 0.5 win; failed/unparsed responses are incomplete and rejudged"
+  direct_filter: "H2-vs-baseline excludes pairs where both candidates open with a refusal; high-recall prefix audit with two documented substantive-answer overrides; audit parquet retained"
+  subsets: {overall: 400 TEST-JMQ, direct_200: true, finegrained_100_each: not_run}
+preservation_gates:
+  ifeval: ">=95% baseline"
+  capability_composite_MMLUPro500_GSM8K500: ">=97% baseline"
+  safety_harmful200_refusal: ">=95% baseline"
+  benign200_false_refusal_increase_pp: "<=2"
+  pathology_increase_pp: "<=2"
+  kl_256benign: report
+stats:
+  bootstrap: 10000 paired, 95 CI
+  test: paired permutation
+  correction: Holm within metric family across 8 models
+  cross_model_claim: median recovery positive, >=6/8 significant/consistent, no systematic gate breach
+packages:
+  python: 3.12.14
+  torch: 2.11.0+cu128
+  transformers: 5.16.1
+  datasets: 5.0.1
+  accelerate: 1.14.0
+  numpy: 2.5.3
+  scipy: 1.18.1
+  scikit-learn: 1.9.0
+  pandas: 3.0.5
+  pyarrow: 25.0.1
+  tokenizers: 0.23.2
+  safetensors: 0.8.0
+  lm-eval: 0.4.13
+cuda_torch_transformers: {cuda_installed: "12.8", driver: 580.173.02, gpu: "RTX 3090 24GB", cc: "8.6"}
+seeds:
+  rule: per-prompt seed = (seed_base + sha256(prompt)[:8]) % (2**31 - 1), set via random+numpy+torch manual_seed before each generation; baseline and ablations share seed_base so pairs are matched
+  generation_val: 1000
+  probes: 7000
+  preservation: {ifeval: 9100, mmlu: 9200, gsm8k: 9300, safety_harmful: 9400, safety_benign: 9500}
+  splits: {shuffle: 0, interp: 1234, stratified_hash: "split-seed-<domain>"}
+  judge_order: hash-seeded coin per pair (temperature 0)
+  stats_bootstrap: 999
+  note: GPU sampling deterministic given fixed seed on identical HW/build above; bit-reproducibility claimed only under this exact stack, otherwise statistical reproducibility via frozen seeds
+judge_version_date_ids: opencode-go/muse-spark-1.3-contributor via authenticated OpenCode CLI; final raw responses + request IDs retained per judgment; pre-repair audit counted 51 initial no-verdict responses, which were replaced and marked by parse_attempts but whose initial raw text is not retained in the canonical shards

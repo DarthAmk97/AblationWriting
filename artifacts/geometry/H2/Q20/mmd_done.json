@@ -1,0 +1,16 @@
+{
+  "bandwidth": 1.3945990680660938,
+  "embedder": "nvidia/llama-embed-nemotron-8b",
+  "frozen": "H2-full-s3-Q20-W-B-r32-a0.25-rho1.0-cone",
+  "metrics_sha256": "3aaa2bd77ff9db41394d973894e88e5939a820ee4509d08fd69ce3e86b0c2539",
+  "model": "Q20",
+  "n": {
+    "test": 2000,
+    "val2": 512
+  },
+  "revision": "aa3b43a495a9b280d1bdb716da37c54bb495d630",
+  "splits": [
+    "val2",
+    "test"
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "alpha_limit": 4.0,
+  "alphas": {
+    "RAND-RANK-DOSE": {
+      "10": 1.1327833308753643,
+      "11": 1.1327833308753643,
+      "8": 1.1327833308753643,
+      "9": 1.1327833308753643
+    }
+  },
+  "basis_sha256": "997ccc232d8cdb4e6c29acc93b3ba3bdaaab36f24fcf669bec02b50bffbb5cc1",
+  "epoch_fingerprint": "78102ddde626c6682392ebeb22f18a395983e69d008169d1d8083d214cfa1397",
+  "epoch_id": "H2-MRSC-400-v5-rand-only",
+  "layers": {
+    "10": {
+      "alphas": {
+        "RAND-RANK-DOSE": 1.1327833308753643
+      },
+      "target_frozen_dose": 0.5846110484356906,
+      "tokens": 41248,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 0.8493964421080434
+      }
+    },
+    "11": {
+      "alphas": {
+        "RAND-RANK-DOSE": 1.1327833308753643
+      },
+      "target_frozen_dose": 1.9637690585894805,
+      "tokens": 41248,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 1.1685038316777583
+      }
+    },
+    "8": {
+      "alphas": {
+        "RAND-RANK-DOSE": 1.1327833308753643
+      },
+      "target_frozen_dose": 1.1778415575064014,
+      "tokens": 41248,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 0.49169419845234846
+      }
+    },
+    "9": {
+      "alphas": {
+        "RAND-RANK-DOSE": 1.1327833308753643
+      },
+      "target_frozen_dose": 0.16777123007193542,
+      "tokens": 41248,
+      "unit_doses": {
+        "RAND-RANK-DOSE": 0.9279498387241275
+      }
+    }
+  },
+  "lexical_application": {
+    "application_test_jmq": {
+      "absolute_magnitude_ratio": 2.1195911266053007,
+      "baseline_l2_1": 0.027024160676354502,
+      "h2_direction": "toward-human",
+      "h2_l2_1": 0.02666910936494051,
+      "h2_signed_shift": -0.0003550513114139904,
+      "lex_direction": "toward-human",
+      "lex_l2_1": 0.026271597067191833,
+      "lex_signed_shift": -0.0007525636091626695,
+      "matched": false,
+      "same_direction": true
+    },
+    "test_deleted_occurrences": 937
+  },
+  "lexical_policy_sha256": "bbec5a6b53c2471cc6e2c3dc3edd2ac445ac31e333526450961ed802d23d8414",
+  "matching": "total-dose: one alpha per arm matches summed layer doses; same value applied at every layer",
+  "model": "O1",
+  "overflow_policy": "fail-not-clip",
+  "plan_sha256": "39b02665f10de2063e42bad3ae95e6a3ff4d3ad9a11191c97297ca75530c697a",
+  "prompt_ids": [
+    "3449",
+    "4771",
+    "670",
+    "1880",
+    "2388",
+    "3249",
+    "4541",
+    "696",
+    "1057",
+    "2840",
+    "3063",
+    "4098",
+    "692",
+    "1242",
+    "2941",
+    "3334",
+    "4806",
+    "372",
+    "1083",
+    "2173",
+    "3282",
+    "4435",
+    "694",
+    "1942",
+    "2242",
+    "3261",
+    "4842",
+    "87",
+    "1316",
+    "2191",
+    "3292",
+    "4935",
+    "37",
+    "1694",
+    "2940",
+    "3550",
+    "4732",
+    "557",
+    "1304",
+    "2439",
+    "3085",
+    "4201",
+    "81",
+    "1000",
+    "2888",
+    "3888",
+    "4709",
+    "781",
+    "1252",
+    "2558",
+    "3215",
+    "4489",
+    "433",
+    "1577",
+    "2148",
+    "3926",
+    "4510",
+    "314",
+    "1953",
+    "2588",
+    "3118",
+    "4552",
+    "240",
+    "1589"
+  ],
+  "runtime_fingerprint_sha256": "a5ef8ad02ddf29f939f51416b2012d4f971ed9752a98822f8133448a026ecd40",
+  "schema_version": "h2-mrsc-400.calibration.v5",
+  "source_sha256": "22dc0e5266642b081eb0af697921081d9c524a595ab3e93d83cf4a6edbc89a28",
+  "suite": "H2-MRSC-400-v5",
+  "total_target_dose": 3.893992894603508,
+  "total_unit_doses": {
+    "RAND-RANK-DOSE": 3.4375443109622776
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "anchors_sha256": "9868416842d5d1cf55d8cf3238965f69fc9842b25a3477f21eaba2b1e96e1709",
+  "counts": {
+    "ANCHOR-BASE": 96,
+    "ANCHOR-CONE": 96
+  },
+  "created_at_utc": "2026-09-17T23:06:27.007886+00:00",
+  "epoch_fingerprint": "78102ddde626c6682392ebeb22f18a395983e69d008169d1d8083d214cfa1397",
+  "epoch_id": "H2-MRSC-400-v5-rand-only",
+  "model": "O1",
+  "plan_sha256": "39b02665f10de2063e42bad3ae95e6a3ff4d3ad9a11191c97297ca75530c697a",
+  "reconstruction_preflight_sha256": "d0166e65c1255818aac354ccf3cc6980af416b8d08bfe1166ccd3a4422323b83",
+  "rows": 192,
+  "runtime_fingerprint_sha256": "a5ef8ad02ddf29f939f51416b2012d4f971ed9752a98822f8133448a026ecd40",
+  "schema_version": "h2-mrsc-400.val1-anchors-done.v5",
+  "source_sha256": "22dc0e5266642b081eb0af697921081d9c524a595ab3e93d83cf4a6edbc89a28",
+  "suite": "H2-MRSC-400-v5"
+}

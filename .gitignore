@@ -1,0 +1,29 @@
+# bulk data lives on HF: amkkk/AblationWriting-H2-dump
+# this repo holds code, paper, tables, and small results only
+*.parquet
+*.npz
+*.bin
+*.gguf
+*.safetensors
+!metrics/*.parquet
+!figures/data/*.parquet
+!judgments/*.parquet
+!exports/jmq_prompt_review.parquet
+.hf_cache/
+__pycache__/
+.ruff_cache/
+.opencode/
+dump_mirror/
+dump_incoming_*/
+hf_outgoing/
+hf_incoming/
+*.tgz
+.opencode_key_*
+.hf_token
+*.log
+*.bak-metrics-*
+*.bak-wbest-*
+*.corrupt-*
+.tmp*
+hub_card*.md
+hub_cards_dump_README.md

@@ -1,0 +1,19 @@
+{
+  "adopted_from_epoch": "H2-MRSC-400-v4",
+  "anchors_sha256": "1312fa3a5aaf80acbdc95909cd32500889ed6bf5f67a15ae3c8602c53c07193b",
+  "counts": {
+    "ANCHOR-BASE": 96,
+    "ANCHOR-CONE": 96
+  },
+  "created_at_utc": "2026-09-17T21:28:10.310461+00:00",
+  "epoch_fingerprint": "78102ddde626c6682392ebeb22f18a395983e69d008169d1d8083d214cfa1397",
+  "epoch_id": "H2-MRSC-400-v5-rand-only",
+  "model": "L1",
+  "plan_sha256": "40a859f6fa0d08a85a90094b667be39470a13e460e8e3b276a644e7d8427de15",
+  "reconstruction_preflight_sha256": "a861ec131ce5a7785881b7a180bdc08e51241077a3ab6640c26517b36c0e1765",
+  "rows": 192,
+  "runtime_fingerprint_sha256": "cae591677259f41636e4c792793dbfa1d37f91d29691fe5c300b8fc7e08fb0f1",
+  "schema_version": "h2-mrsc-400.val1-anchors-done.v5",
+  "source_sha256": "57085482a1c9d72279844e922a5e893aee0fa9c81dce10712ecb7d46f7123ea0",
+  "suite": "H2-MRSC-400-v5"
+}

@@ -1,0 +1,250 @@
+{
+  "K": 1,
+  "calibration_deleted_occurrences": 194,
+  "calibration_split": "first fixed 96 VAL1 rows, contemporaneous v5 runtime",
+  "calibration_val1": {
+    "absolute_magnitude_ratio": 0.9319124796970949,
+    "baseline_l2_1": 0.025825387453050682,
+    "h2_direction": "toward-human",
+    "h2_l2_1": 0.024958532040828953,
+    "h2_signed_shift": -0.0008668554122217287,
+    "lex_direction": "toward-human",
+    "lex_l2_1": 0.025017554076308283,
+    "lex_signed_shift": -0.0008078333767423986,
+    "matched": true,
+    "same_direction": true
+  },
+  "candidates": [
+    {
+      "K": 1,
+      "absolute_difference": 5.902203547933013e-05,
+      "absolute_shift": 0.0008078333767423986,
+      "deleted_occurrences": 194,
+      "q": 0.125
+    },
+    {
+      "K": 1,
+      "absolute_difference": 0.00048426230113773894,
+      "absolute_shift": 0.0013511177133594676,
+      "deleted_occurrences": 428,
+      "q": 0.25
+    },
+    {
+      "K": 1,
+      "absolute_difference": 9.129598432842598e-05,
+      "absolute_shift": 0.0009581513965501547,
+      "deleted_occurrences": 875,
+      "q": 0.5
+    },
+    {
+      "K": 1,
+      "absolute_difference": 0.0005234626119837507,
+      "absolute_shift": 0.0013903180242054794,
+      "deleted_occurrences": 1340,
+      "q": 0.75
+    },
+    {
+      "K": 1,
+      "absolute_difference": 0.004629280436261641,
+      "absolute_shift": 0.00549613584848337,
+      "deleted_occurrences": 1820,
+      "q": 1.0
+    },
+    {
+      "K": 2,
+      "absolute_difference": 0.0004891246194812272,
+      "absolute_shift": 0.001355980031702956,
+      "deleted_occurrences": 320,
+      "q": 0.125
+    },
+    {
+      "K": 2,
+      "absolute_difference": 0.001501898505971086,
+      "absolute_shift": 0.0023687539181928147,
+      "deleted_occurrences": 686,
+      "q": 0.25
+    },
+    {
+      "K": 2,
+      "absolute_difference": 0.0015190627414284202,
+      "absolute_shift": 0.002385918153650149,
+      "deleted_occurrences": 1399,
+      "q": 0.5
+    },
+    {
+      "K": 2,
+      "absolute_difference": 0.00047900584974604546,
+      "absolute_shift": 0.0003878495624756832,
+      "deleted_occurrences": 2134,
+      "q": 0.75
+    },
+    {
+      "K": 2,
+      "absolute_difference": 0.004709324091180713,
+      "absolute_shift": 0.005576179503402442,
+      "deleted_occurrences": 2889,
+      "q": 1.0
+    },
+    {
+      "K": 4,
+      "absolute_difference": 0.002210371506724415,
+      "absolute_shift": 0.0030772269189461438,
+      "deleted_occurrences": 908,
+      "q": 0.125
+    },
+    {
+      "K": 4,
+      "absolute_difference": 0.0035715783703904914,
+      "absolute_shift": 0.00443843378261222,
+      "deleted_occurrences": 1819,
+      "q": 0.25
+    },
+    {
+      "K": 4,
+      "absolute_difference": 0.0006235264936989594,
+      "absolute_shift": 0.00024332891852276925,
+      "deleted_occurrences": 3616,
+      "q": 0.5
+    },
+    {
+      "K": 4,
+      "absolute_difference": 0.009930791262396921,
+      "absolute_shift": 0.01079764667461865,
+      "deleted_occurrences": 5441,
+      "q": 0.75
+    },
+    {
+      "K": 4,
+      "absolute_difference": 0.02486637043997132,
+      "absolute_shift": 0.025733225852193047,
+      "deleted_occurrences": 7313,
+      "q": 1.0
+    },
+    {
+      "K": 8,
+      "absolute_difference": 0.0032762716226538563,
+      "absolute_shift": 0.004143127034875585,
+      "deleted_occurrences": 1576,
+      "q": 0.125
+    },
+    {
+      "K": 8,
+      "absolute_difference": 0.00463691270189406,
+      "absolute_shift": 0.005503768114115789,
+      "deleted_occurrences": 3155,
+      "q": 0.25
+    },
+    {
+      "K": 8,
+      "absolute_difference": 0.002756691046858103,
+      "absolute_shift": 0.0036235464590798315,
+      "deleted_occurrences": 6342,
+      "q": 0.5
+    },
+    {
+      "K": 8,
+      "absolute_difference": 0.020160116156130965,
+      "absolute_shift": 0.021026971568352693,
+      "deleted_occurrences": 9458,
+      "q": 0.75
+    },
+    {
+      "K": 8,
+      "absolute_difference": 0.04258443354897329,
+      "absolute_shift": 0.04345128896119502,
+      "deleted_occurrences": 12608,
+      "q": 1.0
+    },
+    {
+      "K": 16,
+      "absolute_difference": 0.0035578153445421437,
+      "absolute_shift": 0.004424670756763872,
+      "deleted_occurrences": 1853,
+      "q": 0.125
+    },
+    {
+      "K": 16,
+      "absolute_difference": 0.005456512151476349,
+      "absolute_shift": 0.006323367563698078,
+      "deleted_occurrences": 3761,
+      "q": 0.25
+    },
+    {
+      "K": 16,
+      "absolute_difference": 0.0014680006317105976,
+      "absolute_shift": 0.0023348560439323263,
+      "deleted_occurrences": 7490,
+      "q": 0.5
+    },
+    {
+      "K": 16,
+      "absolute_difference": 0.019345220071327145,
+      "absolute_shift": 0.020212075483548874,
+      "deleted_occurrences": 11133,
+      "q": 0.75
+    },
+    {
+      "K": 16,
+      "absolute_difference": 0.043044098742665265,
+      "absolute_shift": 0.043910954154886994,
+      "deleted_occurrences": 14880,
+      "q": 1.0
+    },
+    {
+      "K": 32,
+      "absolute_difference": 0.0033554226451566437,
+      "absolute_shift": 0.004222278057378372,
+      "deleted_occurrences": 2369,
+      "q": 0.125
+    },
+    {
+      "K": 32,
+      "absolute_difference": 0.004770185607756258,
+      "absolute_shift": 0.005637041019977987,
+      "deleted_occurrences": 4740,
+      "q": 0.25
+    },
+    {
+      "K": 32,
+      "absolute_difference": 0.003632558891836935,
+      "absolute_shift": 0.004499414304058664,
+      "deleted_occurrences": 9408,
+      "q": 0.5
+    },
+    {
+      "K": 32,
+      "absolute_difference": 0.024084763865590244,
+      "absolute_shift": 0.024951619277811973,
+      "deleted_occurrences": 13981,
+      "q": 0.75
+    },
+    {
+      "K": 32,
+      "absolute_difference": 0.05146317008513153,
+      "absolute_shift": 0.05233002549735326,
+      "deleted_occurrences": 18620,
+      "q": 1.0
+    }
+  ],
+  "deletion_rule": "int(sha256('H2-MRSC|LEX|<mid>|<prompt_id>|<token_position>'),16) < q*2**256; token_position is zero-based",
+  "epoch_fingerprint": "78102ddde626c6682392ebeb22f18a395983e69d008169d1d8083d214cfa1397",
+  "epoch_id": "H2-MRSC-400-v5-rand-only",
+  "eval_model": "Qwen/Qwen3.5-0.8B",
+  "eval_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "method": "deterministic occurrence deletion calibrated only on contemporaneous VAL1-96 anchors",
+  "model": "O1",
+  "model_revision": "48d788eca847d4d7548f375ad03d3c9312f6139e",
+  "plan_sha256": "39b02665f10de2063e42bad3ae95e6a3ff4d3ad9a11191c97297ca75530c697a",
+  "q": 0.125,
+  "ranking": "descending squared positive baseline-minus-human unigram excess; token-id tie-break",
+  "runtime_fingerprint_sha256": "a5ef8ad02ddf29f939f51416b2012d4f971ed9752a98822f8133448a026ecd40",
+  "runtime_stratum": "contemporaneous-v5-runtime",
+  "schema_version": "h2-mrsc-400.lexical-policy.v5",
+  "selected_token_ids": [
+    321
+  ],
+  "selection_tie_break": "fewer deleted occurrences, lower q, lower K",
+  "source_sha256": "22dc0e5266642b081eb0af697921081d9c524a595ab3e93d83cf4a6edbc89a28",
+  "suite": "H2-MRSC-400-v5",
+  "val1_anchors_sha256": "9868416842d5d1cf55d8cf3238965f69fc9842b25a3477f21eaba2b1e96e1709"
+}

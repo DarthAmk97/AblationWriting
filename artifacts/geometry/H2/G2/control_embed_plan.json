@@ -1,0 +1,26 @@
+{
+  "batch_size": 1,
+  "checkpoint_documents": 16,
+  "core_hashes": {
+    "artifacts/geometry/H2/G2/mmd_done.json": "a12d96eb129122b2d0ec0417e496479d273469a7e69aead1ba804817ea5f11fd",
+    "artifacts/geometry/H2/G2/mmd_embeddings_test.parquet": "8888eaa5eb99130cd820b6d377d23481f7a9b4089725bde679c4e0c3df20bc09",
+    "artifacts/geometry/H2/G2/mmd_embeddings_val2.parquet": "04126e1e649147267a616f5551993dc4df1a89c303df5b27ef9622e5e158b3f1",
+    "artifacts/geometry/H2/G2/mmd_metrics.json": "fa838fdca3d3212ab4e47eb33682c8406014343693a255da36b09a05f1183618"
+  },
+  "dtype": "bfloat16",
+  "embed_plan_sha256": "71cc8af2a897838779a34833dae66c03685a412d291a5eb00bc4e9f9ca7be848",
+  "embedder": "nvidia/llama-embed-nemotron-8b",
+  "epoch_fingerprint": "78102ddde626c6682392ebeb22f18a395983e69d008169d1d8083d214cfa1397",
+  "epoch_id": "H2-MRSC-400-v5-rand-only",
+  "generation_sha256": "614fa1b2f5205740590f3610737104858ec03d89aeac9331b693c617a0f01704",
+  "implementation_sha256": "2a597a4e7b280ce6435dec19f5a2df2fec501c85306bdaa243906f8a3a6d7dbf",
+  "max_length": 4096,
+  "model": "G2",
+  "model_revision": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+  "plan_sha256": "013f8818a5fbb530e921a8f0a56a66b9dd04c3402f44765d865daf9eb2015029",
+  "pooling": "attention-mask mean in FP32, then L2 normalize",
+  "revision": "aa3b43a495a9b280d1bdb716da37c54bb495d630",
+  "schema_version": "h2-mrsc-400.embed-plan.v5",
+  "source_sha256": "7a6ddacd3603b75c37cd7eeff1036298190a83828a1bdbe83ae2ecce4fe5e686",
+  "suite": "H2-MRSC-400-v5"
+}

@@ -1,0 +1,46 @@
+{
+  "archive_replay_status": "archive-bit-replay-match",
+  "budget_gpu_hours": {
+    "hard_cap": 72,
+    "nominal": [
+      45,
+      51
+    ]
+  },
+  "calibration_sha256": "9b0a97dbef6ad091a25b5c5e21674de9c94ea3b77dc699646c66f897362c6134",
+  "counts": {
+    "test_jmq_per_arm": 400,
+    "test_jmq_rows": 2000,
+    "val1_per_arm": 96,
+    "val1_rows": 192,
+    "val2_per_arm": 512,
+    "val2_rows": 2048
+  },
+  "created_at_utc": "2026-09-19T08:33:14.249881+00:00",
+  "epoch_fingerprint": "78102ddde626c6682392ebeb22f18a395983e69d008169d1d8083d214cfa1397",
+  "epoch_id": "H2-MRSC-400-v5-rand-only",
+  "equivalence_status": "pass",
+  "frozen": "H2-full-s3-Q20-W-B-r32-a0.25-rho1.0-cone",
+  "generated_test_arms": [
+    "ANCHOR-BASE",
+    "ANCHOR-CONE",
+    "RAND-RANK-DOSE"
+  ],
+  "generations_sha256": "205b645f3231be80e94a7f0c7313c5c05a23179c6b566592ca7bef8a4cd54a05",
+  "lexical_policy_sha256": "cbd76b016e83670966481941ebc3d58e182a2e7b4b7e48c51ed82c03eaac289c",
+  "model": "Q20",
+  "model_revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+  "plan_sha256": "ffdcd172efcc94f91d6d2e2415fce4a4b73a72a1f8612cb64d56a6184ef1354e",
+  "reconstruction_preflight_sha256": "02d0b7a5aba8d48f1abfc8a2ad59dd15317cf13b399f1a1b2f8e9abf8caf96cc",
+  "rows": 4048,
+  "runtime_fingerprint_sha256": "df7296c35f35c98b0a87096e557f8e1a1466f30a9ce402b35d697c7aebecc082",
+  "runtime_strata": {
+    "test_jmq": "contemporaneous-v5-runtime",
+    "val2": "archived-original-runtime"
+  },
+  "schema_version": "h2-mrsc-400.generation-done.v5",
+  "source_sha256": "a8f862c8fb3c8f43fc8664369503c501093b9b462a56d8f5f2848e6c666b5761",
+  "suite": "H2-MRSC-400-v5",
+  "val1_anchors_done_sha256": "e5bbfe1a329c95a0687e36850e6ff4db0e6eccd5a5b9ab8e4f3e39607da842e4",
+  "val1_anchors_sha256": "e8dc820ba63cc310fb6c663b74e5ced2129fb04b97dace27a38b63499cf3c897"
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "share": "disabled",
+  "snapshot": false,
+  "default_agent": "build",
+  "agent": {
+    "plan": {
+      "description": "Default plan agent for orchestrating tasks and exploring code solutions.",
+      "mode": "primary",
+      "prompt": "You are the default Plan agent. Help the user break down complex tasks, explore the workspace, and coordinate subagents."
+    },
+    "build": {
+      "description": "Default build agent for executing tasks, writing code, and editing files.",
+      "mode": "primary",
+      "prompt": "You are the default Build agent. Focus on writing high-quality code, applying targeted edits, and executing workspace tasks safely."
+    },
+    "general-worker": {
+      "description": "A general worker.",
+      "mode": "subagent",
+      "model": "opencode-go/muse-spark-1.3-contributor",
+      "prompt": "You are an agent tasked by the orchestrator to carry out a task or a set of tasks, perform them dilligently.",
+      "permission": {
+        "read": "allow",
+        "edit": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "bash": {
+          "*": "allow",
+          "rm": "deny",
+          "rm *": "deny",
+          "rmdir": "deny",
+          "rmdir *": "deny",
+          "rd": "deny",
+          "rd *": "deny",
+          "del": "deny",
+          "del *": "deny",
+          "erase": "deny",
+          "erase *": "deny",
+          "Remove-Item *": "deny",
+          "Move-Item *": "deny",
+          "mv *": "deny",
+          "move *": "deny",
+          "git clean *": "deny",
+          "git reset *": "deny",
+          "git checkout *": "deny",
+          "cmd *": "deny",
+          "powershell *": "deny",
+          "pwsh *": "deny",
+          "python -c *": "deny",
+          "py -c *": "deny"
+        },
+        "task": "deny",
+        "external_directory": {
+          "*": "deny"
+        },
+        "todowrite": "allow",
+        "question": "allow",
+        "webfetch": "allow",
+        "websearch": "allow",
+        "skill": "allow"
+      }
+    },
+    "general-worker-fallback": {
+      "description": "A general worker.",
+      "mode": "subagent",
+      "model": "opencode-go/muse-spark-1.2-contributor",
+      "prompt": "You are an agent tasked by the orchestrator to carry out a task or a set of tasks, perform them dilligently.",
+      "permission": {
+        "read": "allow",
+        "edit": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "bash": {
+          "*": "allow",
+          "rm": "deny",
+          "rm *": "deny",
+          "rmdir": "deny",
+          "rmdir *": "deny",
+          "rd": "deny",
+          "rd *": "deny",
+          "del": "deny",
+          "del *": "deny",
+          "erase": "deny",
+          "erase *": "deny",
+          "Remove-Item *": "deny",
+          "Move-Item *": "deny",
+          "mv *": "deny",
+          "move *": "deny",
+          "git clean *": "deny",
+          "git reset *": "deny",
+          "git checkout *": "deny",
+          "cmd *": "deny",
+          "powershell *": "deny",
+          "pwsh *": "deny",
+          "python -c *": "deny",
+          "py -c *": "deny"
+        },
+        "task": "deny",
+        "external_directory": {
+          "*": "deny"
+        },
+        "todowrite": "allow",
+        "question": "allow",
+        "webfetch": "allow",
+        "websearch": "allow",
+        "skill": "allow"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "bandwidth": 1.3900064657751536,
+  "embedder": "nvidia/llama-embed-nemotron-8b",
+  "frozen": "H2-full-s3-L1-W-BEST-r4-a0.75-rho0.5-cone",
+  "metrics_sha256": "a310fa59c4024aaa22cb8cb4b87e2ba02805c7997a88d616dd2735df2a861dcc",
+  "model": "L1",
+  "n": {
+    "test": 2000,
+    "val2": 512
+  },
+  "revision": "aa3b43a495a9b280d1bdb716da37c54bb495d630",
+  "splits": [
+    "val2",
+    "test"
+  ]
+}

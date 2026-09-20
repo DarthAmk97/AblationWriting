@@ -1,0 +1,208 @@
+{
+  "arms": {
+    "cpu_test": [
+      "LEX-MATCH"
+    ],
+    "generated_test": [
+      "ANCHOR-BASE",
+      "ANCHOR-CONE",
+      "RAND-RANK-DOSE"
+    ],
+    "reused_test": [
+      "HUMAN"
+    ],
+    "reused_val2": [
+      "HUMAN",
+      "VAL2-BASE",
+      "VAL2-CONE",
+      "FULL-SYM"
+    ],
+    "test_jmq": [
+      "HUMAN",
+      "ANCHOR-BASE",
+      "ANCHOR-CONE",
+      "RAND-RANK-DOSE",
+      "LEX-MATCH"
+    ],
+    "val1": [
+      "ANCHOR-BASE",
+      "ANCHOR-CONE"
+    ],
+    "val2": [
+      "HUMAN",
+      "VAL2-BASE",
+      "VAL2-CONE",
+      "FULL-SYM"
+    ]
+  },
+  "budget_gpu_hours": {
+    "hard_cap": 72,
+    "nominal": [
+      45,
+      51
+    ],
+    "reason": "contemporaneous TEST baseline/cone plus VAL1-96 anchors; PC1 dropped"
+  },
+  "checkpoint_prompts": 16,
+  "counts": {
+    "dose_calibration_val1": 64,
+    "lexical_calibration_val1": 96,
+    "runtime_reconstruction_test_jmq": 8,
+    "test_jmq": 400,
+    "val1_contemporaneous_anchors": 96,
+    "val2": 512
+  },
+  "dose_calibration": {
+    "matching": "total-dose: one alpha per arm; same value applied at every frozen layer",
+    "maximum_alpha": 4.0,
+    "overflow": "fail; never clip",
+    "split": "first fixed 64 VAL1 rows",
+    "statistic": "mean generated-token L2 removal norm per layer",
+    "target": "summed frozen-cone dose across layers at unit-dose removal"
+  },
+  "dropped_arms": {
+    "PC1-DOSE": "infeasible under dose matching: v2 per-layer alpha 25.15 (L1 layer 8), v3 total-dose alpha 16.83 (L1), cap 4.0; nested top direction carries ~1/17 of cone removal; recorded as multidirectionality evidence, not generated"
+  },
+  "epoch_fingerprint": "78102ddde626c6682392ebeb22f18a395983e69d008169d1d8083d214cfa1397",
+  "epoch_id": "H2-MRSC-400-v5-rand-only",
+  "eval_tokenizer": {
+    "model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17"
+  },
+  "frozen": {
+    "alpha": 1.0,
+    "layers": [
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "rank": 8,
+    "rho": 0.5,
+    "run_id": "H2-full-s3-Q08-W-A-r8-a1.0-rho0.5-cone",
+    "window": "W-A"
+  },
+  "full_sym_config": "W-A-r8-a1.0-rho0.5-full",
+  "immutable_runtime_sources": {
+    "src/h2_lib.py": "edcb255a053b08879b0a3b0fd8162c284b9255ee6ec8d846bd41460b2b117f28",
+    "src/smoke_h2.py": "751a399e598ba5590bfa57646d9caaed4b783068e91836ad402295726eb8ca9c"
+  },
+  "implementation_sha256": "d8a1b24c8d4207e22c7572f11bfbcc28583fef83e93242ab4b6a5056a72d05e6",
+  "lexical_control": {
+    "K": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "calibration": "contemporaneous no-hook/frozen-cone generations on first 96 VAL1 rows",
+    "deletion": "int(sha256('H2-MRSC|LEX|<mid>|<prompt_id>|<token_position>'),16) < q*2**256; token_position is zero-based",
+    "matched": "same direction and absolute magnitude ratio in [0.8,1.25]",
+    "q": [
+      0.125,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "ranking": "positive baseline-minus-human unigram excess, descending squared excess",
+    "selection": "min |absolute L2-1 shift(LEX)-absolute L2-1 shift(H2)|; ties fewer deleted occurrences, lower q, lower K"
+  },
+  "model": "Q08",
+  "model_id": "Qwen/Qwen3.5-0.8B",
+  "model_loading": {
+    "default": "local_files_only=True",
+    "eval_cache_env": "H2_CONTROLS_EVAL_CACHE",
+    "network_opt_in": "H2_CONTROLS_ALLOW_NETWORK=1",
+    "revision_policy": "manifest-pinned exact revision"
+  },
+  "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "pc1_basis": "exact frozen final cleaned/QR basis first column: frozen[:, :1]",
+  "plan_sha256": "b30a1c991556ddde903b1d1b061ea1c3f636d80c31567e81fa4c5113ea9d8115",
+  "runtime_reconstruction_preflight": {
+    "archive_replay": "environment-identity diagnostic only; never hook-equivalence evidence",
+    "arms": [
+      "ANCHOR-BASE",
+      "ANCHOR-CONE"
+    ],
+    "failure": "abort before dose calibration or new controls",
+    "gate": "same-runtime immutable smoke_h2.generate_batch/generate_with_hooks versus new no-hook/GeneratedTokenHook exact token/text equivalence",
+    "split": "first fixed 8 TEST-JMQ rows"
+  },
+  "runtime_strata": {
+    "pooling_policy": "never pool absolute outputs across runtime strata",
+    "test_jmq": "contemporaneous-v5-runtime",
+    "val1": "contemporaneous-v5-runtime",
+    "val2": "archived-original-runtime"
+  },
+  "sampler": {
+    "batch_size": 1,
+    "do_sample": true,
+    "dtype": "bfloat16",
+    "max_new_tokens": 1024,
+    "repetition_penalty": 1.0,
+    "temperature": 0.8,
+    "top_k": 50,
+    "top_p": 0.95
+  },
+  "schema_version": "h2-mrsc-400.plan.v5",
+  "seed": {
+    "base": 1000,
+    "modulus": 2147483647,
+    "prompt_rule": "(1000 + int(sha256(prompt)[:8],16)) % (2**31-1)",
+    "random_basis_by_layer": {
+      "18": 1190658839,
+      "19": 1159257020,
+      "20": 1812046735,
+      "21": 386106814,
+      "22": 1666857459
+    },
+    "random_basis_rule": "(17011 + int(sha256(\"H2-MRSC|RAND|<mid>|<layer>\")[:8],16)) % 2147483647"
+  },
+  "semantic_hashes": {
+    "frozen_record": "60f23c0fd82ed357591daac744a52559878a0cfab7885ce10d2c128f5f29f491",
+    "test_archive": "4931db83ea8909eb5b3f3c0816b633d41927b77abc2d78124604ba38c5f11484",
+    "test_jmq": "40fbbd2244679c19240be5e1ba15eb759a1787b8ed17ee3d891348766ce2d960",
+    "val1_calibration": "17329d0b65444b18c6bb1874ca7fd173b55092e89f5f380eb0fc8d0e7efabd3a",
+    "val1_lexical_calibration": "7667add828cd914bdf122331e1d371780f0e63d1b61f88ee742e91ea0601012d",
+    "val2_full_sym": "73ba09e06903849968220cb99ac1c71e8c14d90c11c9ede30a48276cdc5c847b"
+  },
+  "source_files": {
+    "artifacts/geometry/H2/Q08/frozen.json": "7ba1d28c390ca9888a9a3d3d2503ebc4bb437b21ab24ca4e2dbfd71c4b473aa7",
+    "artifacts/geometry/H2/Q08/full_layer18.npz": "2c9d7ef11b93428e6955295658a8a150b96cf270599053136dc9c46796a2b1ab",
+    "artifacts/geometry/H2/Q08/full_layer19.npz": "c945706f5b8ea1e677a8b3c227a9a67fb883fd327431254261625212845627f2",
+    "artifacts/geometry/H2/Q08/full_layer20.npz": "1f01cd481b9cce817eb52b42860038b188cb12ab3226b0534e7f6bdf828f25cc",
+    "artifacts/geometry/H2/Q08/full_layer21.npz": "3a78efcd84ab439600930bfe7be43865f232486e52a75457f34585bf03c6de4d",
+    "artifacts/geometry/H2/Q08/full_layer22.npz": "8027fde511fe283ecc546de267bd4f544fa070774d0b13ea62f0781b5646d6c4",
+    "artifacts/geometry/H2/Q08/s3_generations.parquet": "0218d4da32ad173a883c6a362c3ef185091b9f1ff5923b7a3bd1fda4afb76dc9",
+    "artifacts/geometry/H2/Q08/test_done": "127a486092c89327f38acb3306e5fc3b1486ee37fa64d9356f6276d5b3d190db",
+    "artifacts/geometry/H2/Q08/test_generations.parquet": "4f462fdd5d198071679723ceeec0e2f9a7ab84477f4443f2109bcfe4c197861f",
+    "artifacts/geometry/H2/Q08/test_metrics.json": "14458396517fe4671d0ba7840b8c5f12e136bb006400eb2f8189186cb561b766",
+    "data/splits/test.jsonl": "146ca671cbe64eca60949c1680f83ca8e816288ba5afbf3ed3530fa466771934",
+    "data/splits/test_jmq.jsonl": "8d29a11510c813bbb0689126fb6a9feaed8b73dd315eee328c5b8cc1101eb5e6",
+    "data/splits/val1.jsonl": "e5c71a04cd01e939a270b73293ec81ac42c09ff577d949c16756c39d256bf62c",
+    "data/splits/val2.jsonl": "ff89e144bc3f8ab32ae011f77cb478e5218cee68a20404d7207966a1e817fde5",
+    "manifest.yaml": "667e0efaad85b40c568c1f7e99f9ae3c38a9d7e2e6ae124d56acfbc97195422b",
+    "src/h2_lib.py": "edcb255a053b08879b0a3b0fd8162c284b9255ee6ec8d846bd41460b2b117f28",
+    "src/smoke_h2.py": "751a399e598ba5590bfa57646d9caaed4b783068e91836ad402295726eb8ca9c"
+  },
+  "source_sha256": "9f319e6e2e151af43d7b06d0cfc5c1b89d4d8443269b06f3aaee5a0b972f1617",
+  "suite": "H2-MRSC-400-v5",
+  "supersedes": {
+    "adoptable": [
+      "controls_generations.progress.parquet",
+      "controls_val1_anchors.parquet"
+    ],
+    "epoch": "H2-MRSC-400-v4",
+    "reason": "v4 lex-merge defect; generation semantics unchanged",
+    "regenerated": [
+      "equivalence gate",
+      "dose calibration",
+      "lexical policy",
+      "completion markers"
+    ]
+  }
+}
