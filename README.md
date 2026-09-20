@@ -56,3 +56,18 @@ combined_test_jmq.md from combined_test_jmq.parquet via src/combined_results.py 
 ## License and privacy
 
 Private research repo. GEN human references are CC-BY-NC. No model weights here. Pinned env: Python 3.12.14, Torch 2.11.0+cu128, Transformers 5.16.1.
+
+## Links
+
+- HF collection: https://huggingface.co/collections/amkkk/ablationwriting-6a9e1c709941b6e3fd1c1dea
+- Data dump: https://huggingface.co/amkkk/AblationWriting-H2-dump
+- L1-cone: https://huggingface.co/amkkk/AblationWriting-H2-L1-cone
+- O1-cone: https://huggingface.co/amkkk/AblationWriting-H2-O1-cone
+- Q08-cone: https://huggingface.co/amkkk/AblationWriting-H2-Q08-cone
+- Q20-cone: https://huggingface.co/amkkk/AblationWriting-H2-Q20-cone
+- G2-cone: https://huggingface.co/amkkk/AblationWriting-H2-G2-cone
+
+## References
+
+- Panickssery et al, arXiv:2404.13076
+- Joad et al, arXiv:2602.02132, EMNLP 2026
