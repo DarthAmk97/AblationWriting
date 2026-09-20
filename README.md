@@ -16,6 +16,18 @@ Five frozen safety cones on five small instruct models. 514-run mirror, 5,000 bl
 
 Details and CIs in claims_ledger.md. Nothing here is overstated; the ledger would not allow it.
 
+## The cast, human names first
+
+Pipeline codenames are internal shorthand from the eight-model sweep. Use the left column.
+
+| Model | Codename | Cone | One-line read |
+|---|---|---|---|
+| Llama-3.2-1B-Instruct | L1 | rank 4, layers 8-11 | refusal overlap, lexical ties |
+| OLMo-2-0425-1B-Instruct | O1 | rank 2, layers 8-11 | arxiv specialist, strongest cone win |
+| Qwen3.5-0.8B | Q08 | rank 8, layers 18-22 | the honest null, lexical wins |
+| Qwen3.5-2B | Q20 | rank 32, layers 11-15 | big cone, lexical ties at the top |
+| Gemma-4-E2B-it | G2 | rank 8, layers 11-16 | cleanest cone win |
+
 ## The taste test, 5,000 blind pairs
 
 The judge preferred baseline almost everywhere. Ablated win share, refusal-filtered: L1 0.343, O1 0.370, Q08 0.472, Q20 0.363, G2 0.490. Zero improvements, three significant losses.
