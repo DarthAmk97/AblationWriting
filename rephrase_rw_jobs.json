@@ -1,0 +1,44 @@
+[
+ {
+  "job": "RW:0",
+  "file": "paper/sections/03_related_work.tex",
+  "head": "\\paragraph{Single directions: the starting point we outgrew.}",
+  "text": "\\paragraph{Single directions: the starting point we outgrew.}\nRefusal can be steered with one residual direction~\\cite{arditi2024refusal},\nconstructed as a mean difference over contrastive prompts. We keep that\nconstruction for our own directions and keep rank one itself only as an\nappendix baseline, because every strand below warns against stopping there."
+ },
+ {
+  "job": "RW:1",
+  "file": "paper/sections/03_related_work.tex",
+  "head": "\\paragraph{Cones: the working object.}",
+  "text": "\\paragraph{Cones: the working object.}\nThe behavior behind a single steerable direction spans cones and\nmanifolds~\\cite{wollschlager2025cones}, and orthogonality alone does not imply\nindependence under intervention. Where refusal needed a cone rather than a\nvector, writing gets the same upgrade: our object is a positive-part cone,\n$h - \\alpha B\\max(B^T(h-\\mu),0)$, not a subspace. The clamp is the point;\nwithout it the intervention removes whatever the projection catches, and the\nfalsification suite shows that version fails."
+ },
+ {
+  "job": "RW:2",
+  "file": "paper/sections/03_related_work.tex",
+  "head": "\\paragraph{Disentanglement: the scrub.}",
+  "text": "\\paragraph{Disentanglement: the scrub.}\nNeighboring mechanisms stay entangled until explicitly\ndisentangled~\\cite{siu2026repit}. Raw writing directions mix voice with\ninstruction following, so we build a separate basis from paired\ncounterfactuals (brevity, schema, facts, arithmetic, refusal-adjacent\ncompliance) and subtract its span from the writing basis before anything is\ncut, with strength $\\rho$. OLMo taught us the knob bites: the effect survived\na light scrub and died under the full one. That death is reported, not hidden."
+ },
+ {
+  "job": "RW:3",
+  "file": "paper/sections/03_related_work.tex",
+  "head": "\\paragraph{Local multi-directionality: why rank is searched, not assumed.}",
+  "text": "\\paragraph{Local multi-directionality: why rank is searched, not assumed.}\nLocal directions sometimes beat any centroid~\\cite{piras2026som}, and our own\nfailed single-direction control independently reproduces the lesson: matching\nthe cone burden with its top direction alone demanded $25\\times$ strength per\nlayer against a cap of four. So we fit cones per depth window across ranks\n2--32 and let the validation split, never the screen maximum, choose. Rank is\nan outcome here, not a hyperparameter."
+ },
+ {
+  "job": "RW:4",
+  "file": "paper/sections/03_related_work.tex",
+  "head": "\\paragraph{Narrative signal: why low rank at all.}",
+  "text": "\\paragraph{Narrative signal: why low rank at all.}\nAuthorship signal spreads redundantly across discourse\ndimensions~\\cite{russell2026storyscope}. A phenomenon smeared across\ndimensions argues against rank one from the data side, exactly as the geometry\nargues from the mechanism side. Both point the same way, which is why the\nstudy starts at low rank with an appendix baseline rather than at rank one\nwith ambitions."
+ },
+ {
+  "job": "RW:5",
+  "file": "paper/sections/03_related_work.tex",
+  "head": "\\paragraph{Distribution tuning: the scale discipline.}",
+  "text": "\\paragraph{Distribution tuning: the scale discipline.}\nLarge-scale distribution tuning sets the evaluation discipline we\nfollow~\\cite{rosmine2026deft}: fixed blind slices, bootstrap uncertainty,\nfamily-wise correction, and metrics that separate word habits (L2), outlier\nrobustness (JSD), and embedding geometry (MMD, same embedder family). Where\nthat work trains to match distributions, we intervene to test whether a small\ncut moves them. Same instruments, opposite direction of inference."
+ },
+ {
+  "job": "RW:6",
+  "file": "paper/sections/03_related_work.tex",
+  "head": "\\paragraph{Evaluator favoritism: why taste stays secondary.}",
+  "text": "\\paragraph{Evaluator favoritism: why taste stays secondary.}\nAutomated judges favor machine generations, including their\nown~\\citep{panickssery2024llmevaluators}, broadly across judge\nmodels~\\cite{laurito2025aibias}. Our judge prefers one model's outputs to\nactual human writing. We therefore read blind preference as a taste stress\ntest that can only falsify a quality claim, never establish one, a reading\nthe data endorses: the claim died on it."
+ }
+]
