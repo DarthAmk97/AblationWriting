@@ -42,9 +42,9 @@ model-index:
       value: 0.49
 ---
 
-# Gemma-4-E2B that writes simpler (frozen safety-cone ablation)
+# Gemma-4-E2B that writes simpler (frozen writing-cone ablation)
 
-Grab a 2B Gemma and grab the eight activation directions tied to its safety-refusal voice. Shave them off as it writes. The cleanest cone win on the panel and lexical deletion barely registers. Nothing is retrained and no weights change. In file names and code this model is keyed G2; everywhere else this card names it Gemma-4-E2B.
+Grab a 2B Gemma and grab the eight activation directions of its machine-writing voice. Shave them off as it writes. The cleanest cone win on the panel and lexical deletion barely registers. Nothing is retrained and no weights change. Refusal overlap is incidental by construction because humans comply where models refuse, and removal is partial with retention 0.61-0.93. In file names and code this model is keyed G2; everywhere else this card names it Gemma-4-E2B.
 
 Words we keep using: rank is how many directions get cut, here 8 out of 2048. Alpha is cut strength, here 0.5. MMD is distance between two piles of text; smaller against human is better. Recovery is the fraction of the baseline-to-human gap closed. JMQ is a blind taste test judged by another model where 0.50 is a coin flip.
 

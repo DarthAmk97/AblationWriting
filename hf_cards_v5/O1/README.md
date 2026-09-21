@@ -42,9 +42,9 @@ model-index:
       value: 0.37
 ---
 
-# OLMo-2 1B that writes simpler (frozen safety-cone ablation)
+# OLMo-2 1B that writes simpler (frozen writing-cone ablation)
 
-Take a 1B OLMo, locate the two activation directions tied to its safety-refusal voice, and trim them away as it writes. A weak model forced to TEST to fail honestly, and it answered with the strongest cone win on the panel. Nothing is retrained and no weights change. In file names and code this model is keyed O1; everywhere else this card names it OLMo-2 1B.
+Take a 1B OLMo, locate the two activation directions of its machine-writing voice, and trim them away as it writes. A weak model forced to TEST to fail honestly, and it answered with the strongest cone win on the panel. Nothing is retrained and no weights change. Refusal overlap is incidental by construction because humans comply where models refuse, and removal is partial with retention 0.61-0.93. In file names and code this model is keyed O1; everywhere else this card names it OLMo-2 1B.
 
 Words we keep using: rank is how many directions get cut, here 2 out of 2048. Alpha is cut strength, here 0.75. MMD is distance between two piles of text; smaller against human is better. Recovery is the fraction of the baseline-to-human gap closed. JMQ is a blind taste test judged by another model where 0.50 is a coin flip.
 

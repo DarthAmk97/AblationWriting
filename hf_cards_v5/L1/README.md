@@ -42,9 +42,9 @@ model-index:
       value: 0.3427
 ---
 
-# Llama-3.2-1B that writes simpler (frozen safety-cone ablation)
+# Llama-3.2-1B that writes simpler (frozen writing-cone ablation)
 
-Take a 1B Llama, find the four activation directions tied to its safety-refusal voice, and shave them off as it writes. Word choice moves toward human level. Nothing is retrained and no weights change. In file names and code this model is keyed L1; everywhere else this card names it Llama-3.2-1B.
+Take a 1B Llama, find the four activation directions of its machine-writing voice, and shave them off as it writes. Word choice moves toward human level. Nothing is retrained and no weights change. Refusal overlap is incidental by construction because humans comply where models refuse, and removal is partial with retention 0.61-0.93. In file names and code this model is keyed L1; everywhere else this card names it Llama-3.2-1B.
 
 Words we keep using: rank is how many directions get cut, here 4 out of 2048. Alpha is cut strength, here 0.75, meaning 75 percent of the positive projection comes off. MMD is distance between two piles of text; smaller against human is better. Recovery is the fraction of the baseline-to-human gap closed. JMQ is a blind taste test judged by another model where 0.50 is a coin flip.
 
@@ -170,7 +170,7 @@ Our LEX-MATCH outputs for all 400 prompts sit in controls_generations.parquet, c
 ## Limitations
 
 - Linear bake impossible: clamp plus generated-only locus cannot fuse into weights, so no GGUF.
-- LEX unmatched on L1 with ratio 1.96, outside the 0.8 to 1.25 band.
+- LEX unmatched on Llama-3.2-1B with ratio 1.96, outside the 0.8 to 1.25 band.
 - Quality preference favors baseline; the cone humanizes distributions, not taste.
 - One deterministic random draw; a second seed would strengthen the rank claim.
 - English GEN refs only.
@@ -212,4 +212,4 @@ Llama team for the parent. Panickssery et al for the steering-vector literature.
 | wikihow | 8 | 12 | n = 20, refusals ate half the cell |
 | wikipedia | 9 | 29 | |
 
-22 of the 24 bilateral-refusal exclusions on the whole panel live here. The cone overlaps the refusal direction and retention sits at 0.61, see the L1 exhibit in the paper methods. Refusal rides along, it does not drive. Case-level color: exports/jmq_case_probe.md.
+22 of the 24 bilateral-refusal exclusions on the whole panel live here. The cone overlaps the refusal direction and retention sits at 0.61, see the Llama-3.2-1B exhibit in the paper methods. Refusal rides along, it does not drive. Case-level color: exports/jmq_case_probe.md.

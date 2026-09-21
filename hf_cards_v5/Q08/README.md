@@ -42,9 +42,9 @@ model-index:
       value: 0.4722
 ---
 
-# Qwen3.5-0.8B that writes simpler (frozen safety-cone ablation)
+# Qwen3.5-0.8B that writes simpler (frozen writing-cone ablation)
 
-Take a 0.8B Qwen, locate the eight activation directions tied to its safety-refusal voice, and slice them away completely as it types. The honest null of the panel: the geometry stays exactly the same here; plain word deletion takes the full win. Nothing gets retrained, and no weights shift. In file names and code this model is keyed Q08; everywhere else this card names it Qwen3.5-0.8B.
+Take a 0.8B Qwen, locate the eight activation directions of its machine-writing voice, and slice them away completely as it types. The honest null of the panel: the geometry stays exactly the same here; plain word deletion takes the full win. Nothing gets retrained, and no weights shift. Refusal overlap is incidental by construction because humans comply where models refuse, and removal is partial with retention 0.61-0.93. In file names and code this model is keyed Q08; everywhere else this card names it Qwen3.5-0.8B.
 
 Words we keep using: rank is how many directions get cut, here 8 out of 2048. Alpha is the cut strength, here 1.0, meaning full removal of the positive projection. MMD is the distance between two piles of text; smaller numbers mean better alignment against human text. Recovery is the fraction of the baseline-to-human gap that gets closed. JMQ is a blind taste test judged by another model where a score of 0.50 is a total coin flip.
 

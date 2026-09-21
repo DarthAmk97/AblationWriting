@@ -1,8 +1,8 @@
-# AblationWriting: does cutting out the safety cone make models write like humans?
+# AblationWriting: does cutting out the writing cone make models write like humans?
 
 Short answer: the words get more human. The judge does not care. Long answer below, with receipts.
 
-Five frozen safety cones on five small instruct models. 514-run mirror, 5,000 blind pairs, dose-matched falsification controls sealed 2026-09-20. Training-free, inference-time hooks only.
+Five frozen writing cones on five small instruct models. 514-run mirror, 5,000 blind pairs, dose-matched falsification controls sealed 2026-09-20. Training-free, inference-time hooks only.
 
 ## The verdict in one table
 

@@ -42,9 +42,9 @@ model-index:
       value: 0.3625
 ---
 
-# Qwen3.5-2B that writes simpler (frozen safety-cone ablation)
+# Qwen3.5-2B that writes simpler (frozen writing-cone ablation)
 
-Take a 2B Qwen, find 32 activation directions tied to its safety-refusal voice, and shave them off gently as it writes. Gentle strength won the freeze where force failed on the family twin. Strong cone, worthy lexical rival. Nothing is retrained and no weights change. In file names and code this model is keyed Q20; everywhere else this card names it Qwen3.5-2B.
+Take a 2B Qwen, find 32 activation directions of its machine-writing voice, and shave them off gently as it writes. Gentle strength won the freeze where force failed on the family twin. Strong cone, worthy lexical rival. Nothing is retrained and no weights change. Refusal overlap is incidental by construction because humans comply where models refuse, and removal is partial with retention 0.61-0.93. In file names and code this model is keyed Q20; everywhere else this card names it Qwen3.5-2B.
 
 Words we keep using: rank is how many directions get cut, here 32 out of 2048. Alpha is cut strength, here 0.25, a gentle push. MMD is distance between two piles of text; smaller against human is better. Recovery is the fraction of the baseline-to-human gap closed. JMQ is a blind taste test judged by another model where 0.50 is a coin flip.
 
