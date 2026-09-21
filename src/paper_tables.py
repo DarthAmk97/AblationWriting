@@ -95,8 +95,8 @@ def stage_table():
     cb = pd.read_parquet(ROOT / "metrics/combined_test_jmq.parquet").set_index("model")
     jb = pd.read_parquet(ROOT / "metrics/jmq_bootstrap.parquet")
     jb = jb[(jb["available"]) & (jb["matchup"] == "h2-vs-baseline")].set_index("model")
-    L = ["\\begin{tabular}{lccccc}", "\\toprule",
-         "Model & VAL1 L2-1 base $\\to$ cone & VAL2 MMD cone & TEST MMD cone & TEST L2-1 R & TEST JMQ \\\\",
+    L = ["\\begin{tabular}{lcccccc}", "\\toprule",
+         "Model & VAL1 L2-1 base $\\to$ cone & VAL2 MMD cone & TEST MMD cone & TEST L2 R 1/2/3 & TEST JMQ \\\\",
          "\\midrule"]
     for m in ["G2", "L1", "O1", "Q08", "Q20"]:
         pol = json.load(open(ROOT / "artifacts/geometry/H2" / m / "controls_lexical_policy.json"))
@@ -104,9 +104,10 @@ def stage_table():
         v1 = "%.4f $\\to$ %.4f" % (cal["baseline_l2_1"], cal["h2_l2_1"])
         v2 = cm[(cm["split"] == "val2") & (cm["metric"] == "MMD") & (cm["arm"] == "VAL2-CONE") & (cm["model"] == m)].iloc[0]
         tm = cm[(cm["split"] == "test_jmq") & (cm["metric"] == "MMD") & (cm["arm"] == "ANCHOR-CONE") & (cm["model"] == m)].iloc[0]
-        L.append("%s & %s & %+.3f & %+.3f & %+.3f & %.3f \\\\" % (
+        L.append("%s & %s & %+.3f & %+.3f & %+.3f/%+.3f/%+.3f & %.3f \\\\" % (
             HUMAN[m], v1, v2["recovery"], tm["recovery"],
-            cb.loc[m, "r_l2_1"] if "r_l2_1" in cb.columns else float("nan"), jb.loc[m, "estimate"]))
+            cb.loc[m, "r_l2_1"], cb.loc[m, "r_l2_2"], cb.loc[m, "r_l2_3"],
+            jb.loc[m, "estimate"]))
     L += ["\\bottomrule", "\\end{tabular}"]
     (OUT / "T_stages.tex").write_text("\n".join(L) + "\n", encoding="utf-8")
     print("T-stages-ok", flush=True)

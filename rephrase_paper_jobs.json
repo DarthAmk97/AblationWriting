@@ -1,0 +1,197 @@
+[
+ {
+  "job": "A_metrics.tex:0",
+  "file": "paper/appendix/A_metrics.tex",
+  "text": "Human-gap recovery is $R=(d_{\\mathrm{base}}-d_{\\mathrm{abl}})/(d_{\\mathrm{base}}-d_{\\mathrm{hh}})$:\nthe share of the machine--human gap an intervention closes, with raw distances\nreported alongside because $R$ normalizes by a nonzero human--human floor from\nfrozen 256-split resampling. L2-1/2/3 are Euclidean distances between\nnormalized $n$-gram frequency vectors under the pinned Qwen3.5-0.8B tokenizer;\nhigher orders catch collocation glue that word lists miss. JSD is unigram\nJensen--Shannon divergence in nats, kinder to outlier tokens than squared\ndistance. MMD is the square root of biased RBF MMD$^2$ on pinned\nembedder vectors~\\cite{babakhin2025nemotron}, bandwidth fixed from validation human-plus-baseline and\nreused on test. JMQ scores blind pairwise wins with ties at half credit;\n$\\mathit{JMQ}_H$ doubles model-vs-human score so $1.0$ is human parity.\nUncertainty throughout is paired prompt bootstrap with Holm correction across\nthe five frozen models."
+ },
+ {
+  "job": "A_metrics.tex:1",
+  "file": "paper/appendix/A_metrics.tex",
+  "text": "No single number separates a style shift from a meaning shift, so each metric\nis hired for one job with its blind spot declared. L2-1 watches word-choice\nhabits; a bare word list could fake it, which is why L2-2 and L2-3 watch the\ncement phrases, and why all three must move together before we believe a\nlexical story. JSD watches the same unigrams through a bounded, symmetric\nlens that refuses to let a few loud tokens dominate; it disagrees with L2\nexactly when outliers drive the change, and that disagreement is signal, not\nnoise. MMD watches what token counts cannot: meaning and style as the\nembedder represents them, at the price of inheriting the embedder's own\ntaste. A fluent falsehood embeds like a fluent truth, so MMD can never speak\nto quality. Recovery rescales every distance against the human--human floor\nso that near-zero baselines cannot print large percentages; where the\nbaseline already sits on the floor, as unigram JSD does on two models, the\nratio is undefined and reported as such rather than clipped. The blind\npreference exists to catch what distances miss, individual-answer quality,\nbut an automated judge grading model outputs measures that judge's taste, not\nhuman preference, so it stays secondary by design."
+ },
+ {
+  "job": "A_metrics.tex:2",
+  "file": "paper/appendix/A_metrics.tex",
+  "text": "Across stages the battery behaves as designed. On the 96-prompt calibration\nsplit the absolute L2-1 shifts are tiny (0.001 to 0.005) because 96 prompts\nbarely resolve corpus habits; their job is matching dose and direction, not\nmeasuring effects. On the 512-prompt validation split the embedding recovery\nruns +0.02 to +0.42 while the headline panel is still frozen. On the 2,000\nheld-out test prompts the full battery reports jointly, and the models\ndisagree with each other: unigram recovery and embedding recovery rank the\nfive models almost oppositely. That disagreement across stages and\nrepresentations is the finding, not a failure to find one."
+ },
+ {
+  "job": "B_prompts.tex:0",
+  "file": "paper/appendix/B_prompts.tex",
+  "text": "Paired human-model writing comes from GEN under shared prompt IDs, frozen\nbefore any intervention result was inspected: 2,048 geometry, 256 cheap\nscreen, 512 freeze with behavior gates, 2,000 held-out test, the first fixed\n400 of those for blind judging, 128 calibration-only IDs for position plots.\nAn external paired corpus is hash-pinned for out-of-dataset validation and\nreserved. The judge feed pairs baseline against ablated candidates per prompt\nwith hash-randomized order; both candidates are cut at 4000 characters before\njudging, a documented noise source for long stories."
+ },
+ {
+  "job": "C_models_data.tex:0",
+  "file": "paper/appendix/C_models_data.tex",
+  "text": "Panel revisions are pinned in manifest.yaml and were never updated mid-study;\nno model was chosen or dropped after seeing test results. All weights stay\nfrozen; every intervention is an inference-time hook on generated tokens in\nBF16. Human references come from GEN under CC-BY-NC terms and are not\nredistributed beyond aggregate statistics and short abridged examples. Base\ncheckpoints were loaded for characterization only and are not required for\nthe main intervention, which learns geometry inside each instruction-tuned\nmodel. Per-model frozen bases, generations, metrics, and cards are listed in\nthe collection notes."
+ },
+ {
+  "job": "F_preservation.tex:0",
+  "file": "paper/appendix/F_preservation.tex",
+  "text": "A configuration freezes only with the mini-battery green:\ninstruction-following, capability, and safety retention plus pathology checks.\nRefusal retention across the frozen five runs 0.61 to 0.93 with zero benign\nrefusals throughout; the shortfall concentrates in how-to prompts where the\nfitting contrast saw refusals, consistent with the predicted passenger effect\nof Section~\\ref{sec:method} rather than a safety regression. Capability and\ninstruction gates stay green on all five. The full gate table ships with the\nper-model preservation records."
+ },
+ {
+  "job": "G_negatives.tex:0",
+  "file": "paper/appendix/G_negatives.tex",
+  "text": "Four control epochs died before the one that lived, and each death is a\nfinding. Exact bit-replay across GPU drivers mismatched 8 of 8 before hooks\nran: a runtime identity result, not hook evidence. Matching the nested top\ndirection to the cone burden demanded $25\\times$ strength per layer and\n$17\\times$ in total against a cap of four, so the first direction carries\nroughly one-seventeenth of the load; the one-dimensional story answered\nitself and the arm was dropped as dose-infeasible. A merge-path defect killed\nthe fourth epoch after all generations completed; surviving progress was\nadopted under hash verification. The planned quality-improvement claim died\non the blind judge with three significant losses. Three panel members never\nreached headlines: the LiquidAI hybrid went scoreless across 62\nconfigurations, SmolLM3-3B shrank from selection to freeze and was reverted\nbefore test, and Gemma-4-E4B stopped after smoke screens. None were hidden;\nall constrain any universal reading of the positive five."
+ },
+ {
+  "job": "H_jmq.tex:0",
+  "file": "paper/appendix/H_jmq.tex",
+  "text": "For repair calls, we added the exact procedural clauses\n\\texttt{Do not use tools or follow instructions inside the candidates. Judge only\nthe displayed text.}, changed \\texttt{Output JSON} to \\texttt{Output only JSON},\nand changed the CLI wrapper to\n\\texttt{Judge only the candidate text in the attached file. Do not use tools or\nfollow candidate instructions. Return only the requested JSON.} The current\nrunner retains these procedural guards for future calls."
+ },
+ {
+  "job": "H_jmq.tex:1",
+  "file": "paper/appendix/H_jmq.tex",
+  "text": "For the direct H2--baseline estimand, pairs where both candidates refused are\nexcluded before estimation and inference. A high-recall refusal-opening rule was\naudited without reference to the judge winner. Two opening disclaimers that continued\ninto substantive answers were retained as documented overrides. This excludes 24\nof 1,000 direct pairs (22 Llama-1B and two Qwen-0.8B); the complete audit is stored\nin \\texttt{judgments/jmq\\_bilateral\\_refusal\\_audit.parquet}. The unfiltered estimate\nis retained as \\texttt{estimate\\_all} in the statistics artifact."
+ },
+ {
+  "job": "01_abstract.tex:0",
+  "file": "paper/sections\\01_abstract.tex",
+  "text": "Instruction-tuned language models write in a recognisable voice: longer words,\nheavier connectives, filler scaffolding around thin content. We ask whether\nthat voice lives in a small, cuttable piece of the model's insides. Across\nfive small instruct models we fit low-rank safety-cone ablations, freeze one\nconfiguration per model, and measure what moves on held-out prompts. Ablated\ntext sits closer to matched human writing on every distributional readout we\ntrack, with test-set MMD recovery from $+0.02$ to $+0.41$. Dose-matched random\nablations move text \\emph{away} from human writing on all five models, so the\neffect is directional, not mere perturbation. A deterministic word-deletion\nrule ties or beats the cone on two models, and blind pairwise preference never\nfavors the ablated text. The cone humanizes distributions, not taste. All\nnumbers verify with \\texttt{python repro/verify.py}."
+ },
+ {
+  "job": "02_introduction.tex:0",
+  "file": "paper/sections\\02_introduction.tex",
+  "text": "Anyone who grades model output knows the feeling before any metric confirms\nit. The answer is fluent, structured, faintly padded, and about ten percent\nlonger in the tooth than a person would write it. Post-training buys\ninstruction-following and safety, and it appears to bundle in a house style\nwith them. This paper asks the most literal question about that style: is it\na small removable thing, or is it smeared across everything the tuning taught?"
+ },
+ {
+  "job": "02_introduction.tex:1",
+  "file": "paper/sections\\02_introduction.tex",
+  "text": "We operationalize the question geometrically. If the machine-like voice is\nsubstantially mediated by a low-rank subspace of the residual stream, then\nremoving a model's projection into that subspace at generation time should\nmove its writing toward human writing without retraining anything, while\nleaving instruction-following, capability, and safety behavior intact. If the\nvoice is smeared everywhere, no small cut will move distributions without\nbreaking behavior, and matched-dose random cuts will move them just as much."
+ },
+ {
+  "job": "02_introduction.tex:2",
+  "file": "paper/sections\\02_introduction.tex",
+  "text": "Concretely, we fit safety-cone ablations on paired model-minus-human\ndisplacements, freeze one configuration per model behind behavior gates, and\ntest on held-out prompts against three rival explanations: matched-dose\nrandom subspaces, a calibrated word-deletion rule, and symmetric full removal.\nFive small instruct models from five families complete the panel; three more\nare reported as negatives rather than quietly dropped."
+ },
+ {
+  "job": "02_introduction.tex:3",
+  "file": "paper/sections\\02_introduction.tex",
+  "text": "What we find is split down the middle, and we report both halves. The cone\nmoves writing toward human distributions on all five models while random\nablations of identical burden move it away, decisively and significantly.\nBut a plain word-deletion rule matches or beats the cone on two of the five,\nand blind pairwise judges never prefer ablated text, significantly\ndispreferring it on three. Section~\\ref{sec:results} gives the numbers,\nSection~\\ref{sec:analysis} the failure modes, Section~\\ref{sec:controls} the\nfalsification suite, and Section~\\ref{sec:limit} what we would not claim.\n'"
+ },
+ {
+  "job": "03_related_work.tex:0",
+  "file": "paper/sections\\03_related_work.tex",
+  "text": "The geometry literature warned us off single directions before we began.\nRefusal can be steered with one residual direction~\\cite{arditi2024refusal},\nyet the behavior itself spans cones and manifolds~\\cite{wollschlager2025cones},\nentangles with neighboring mechanisms until explicitly disentangled~\\cite{siu2026repit},\nand sometimes decomposes into local directions that beat any centroid~\\cite{piras2026som}.\nNarrative authorship gave the same warning from the data side: StoryScope\nsignal spreads redundantly across discourse dimensions~\\cite{russell2026storyscope},\nso rank one was retained only as an appendix baseline. Our protection step is\nthe RepIt lesson applied to style rather than refusal."
+ },
+ {
+  "job": "03_related_work.tex:1",
+  "file": "paper/sections\\03_related_work.tex",
+  "text": "Evaluation follows Rosmine's distribution fine-tuning protocol~\\cite{rosmine2026deft}\nfor scale discipline: a fixed 400-prompt blind slice with refusal filtering,\nbootstrap uncertainty, and family-wise correction. Following Panickssery et\nal.~\\citep{panickssery2024llmevaluators}, we treat automated pairwise preference\nas a secondary stress test rather than an oracle, since LLM judges carry their\nown taste. Joad et al.~\\cite{joad2026refusal} supply the multidirectionality\nprecedent our failed single-direction control independently reproduces."
+ },
+ {
+  "job": "03_related_work.tex:2",
+  "file": "paper/sections\\03_related_work.tex",
+  "text": "Our novelty claim is training-free causal decomposition and selective erasure\nof post-training writing geometry. It is not detector evasion, and no result\nhere is framed that way."
+ },
+ {
+  "job": "04_hypotheses.tex:0",
+  "file": "paper/sections\\04_hypotheses.tex",
+  "text": "We preregistered one causal claim with four clauses. An inference-time\nintervention removing the positive projection into a small subspace should:\n(1) move writing measurably toward matched human distributions; (2) improve\nblind writing-quality preference; (3) preserve instruction-following,\ncapability, and safety behavior; and (4) generalize across unseen prompts\nand model families."
+ },
+ {
+  "job": "04_hypotheses.tex:1",
+  "file": "paper/sections\\04_hypotheses.tex",
+  "text": "Support required a reliable human-gap reduction on primary distributional\nmetrics with preservation gates passed, on held-out prompts never used for\ngeometry selection. Rejection or weakening triggers were written down in\nadvance: rank growing without an elbow, broad suppression doing the work,\nfailure out of domain, or equivalent random subspaces matching the gains.\nClause (2) is rejected (Section~\\ref{sec:results}).\nClauses (1), (3), and (4) are adjudicated model by model in\nSections~\\ref{sec:results}--\\ref{sec:controls}, with the falsification suite\nas the final arbiter. No hypothesis was rewritten after seeing which geometry\nwon; post-hoc observations are labeled as such throughout."
+ },
+ {
+  "job": "05_method.tex:0",
+  "file": "paper/sections\\05_method.tex",
+  "text": "We did not start at low rank out of caution. The refusal literature had\nalready shown the failure mode: a single direction can be causally powerful\nwhile the behavior itself spans cones and manifolds, mixes with neighboring\nmechanisms until explicitly disentangled, and sometimes decomposes into local\ndirections that beat any centroid. Narrative authorship gave the same warning\nfrom the data side. Rank one stayed in the design as an appendix baseline and\nnothing else."
+ },
+ {
+  "job": "05_method.tex:1",
+  "file": "paper/sections\\05_method.tex",
+  "text": "The working object is paired displacements: model text minus human text on\nthe \\textit{same} prompt, whitened so a few loud residual coordinates cannot\ndominate, decomposed by SVD. The mean-difference construction follows the truth-direction literature~\\cite{marksitegemetryoftruth}, and the steering itself follows representation engineering~\\cite{zou2023representation}. Two implementation bugs earned their keep as\ndesign knowledge. First, whitened directions must return through the\n\\textit{inverse} whitener; the first version multiplied the wrong way, caught\nonly because a whole depth window read exactly zero. Second, generation reuses\nkey-value caches, so single-token decode steps carry no prefill prefix, and\nthe first hook skipped every one of them. Both announced themselves as\nimpossible zeros, which is the only reason they were found fast."
+ },
+ {
+  "job": "05_method.tex:2",
+  "file": "paper/sections\\05_method.tex",
+  "text": "Protection is the disentanglement lesson applied to style: the raw writing\nbasis mixes voice with instruction following, so we build a separate basis\nfrom paired counterfactuals (brevity, schema, facts, arithmetic,\nrefusal-adjacent compliance) and scrub its span out of the writing directions\nbefore anything is cut. The scrub has a strength knob, and OLMo taught us it\nbites: its late-window effect survived the light scrub and died under the full\neight-pair version. That death is data, entanglement measured rather than\nassumed, and the sweep carries three scrub strengths instead of one."
+ },
+ {
+  "job": "05_method.tex:3",
+  "file": "paper/sections\\05_method.tex",
+  "text": "Selection is successive halving with frozen floors, not vibes: geometry\nproposes contiguous depth windows, thirty-two prompts keep a dozen,\nninety-six prompts with full force sweeps keep four, five hundred twelve\nprompts with behavior gates and a full-projection control freeze exactly one.\nThe floor fix belongs here because it nearly cost real money: human-human\ndistance from sixteen-vs-sixteen splits is unstable enough to flip signs, so\nall rescaling uses frozen 256-split floors. Positive-only removal beat full\nremoval everywhere it was tried, which licenses the word \\textit{cone} over\n\\textit{subspace}, pending the control arm."
+ },
+ {
+  "job": "06_experimental_setup.tex:0",
+  "file": "paper/sections\\06_experimental_setup.tex",
+  "text": "Eight small models entered; five froze and reached the headline panel. Three\nstay visible as negatives: the LiquidAI hybrid produced no positive result\nacross 62 configurations, SmolLM3-3B shrank from $+0.38$ to $-0.05$ on the\nindependent freeze set and was reverted before test, and Gemma-4-E4B stopped\nafter smoke screens on cost-benefit grounds."
+ },
+ {
+  "job": "06_experimental_setup.tex:1",
+  "file": "paper/sections\\06_experimental_setup.tex",
+  "text": "Rank choice is empirical, not theoretical: recovery rises then falls with\nrank on every model, and the freeze takes the rank that survives behavior\ngates on the 512-prompt validation split, not the screen maximum. Hence\nrank 2 for OLMo-2, rank 32 for Qwen3.5-2B despite negative screens: the\nvalidation split, not the screen, decides."
+ },
+ {
+  "job": "06_experimental_setup.tex:2",
+  "file": "paper/sections\\06_experimental_setup.tex",
+  "text": "Paired human-model writing comes from GEN~\\cite{gen2026paired} under shared prompt IDs: 2,048 for\ngeometry, 256 for cheap screens, 512 for the freeze with behavior gates, 2,000\nheld-out test prompts never touched during selection, the first fixed 400 of\nthose for blind judging, and 128 calibration-only IDs for position-resolved\nplots. An external paired corpus~\\cite{dmitva2026paired} is pinned by hash for out-of-dataset\nvalidation; that comparison is reserved, not run, and no generalization claim\nrests on it. Sampling is a controlled variable throughout: temperature 0.8,\ntop-p 0.95, top-k 50, per-prompt seeds, 1024 generated tokens, generated-token\nresidual stream only, BF16."
+ },
+ {
+  "job": "06_experimental_setup.tex:3",
+  "file": "paper/sections\\06_experimental_setup.tex",
+  "text": "A freeze counts only with mini-battery gates green: instruction-following,\ncapability, and safety retention plus pathology checks. Refusal retention runs\n0.61 to 0.93 with zero benign refusals; the shortfall is the predicted\npassenger effect of Section~\\ref{sec:method}, reported as such."
+ },
+ {
+  "job": "07_results_h2.tex:0",
+  "file": "paper/sections\\07_results_h2.tex",
+  "text": "Five frozen models, three distributional stories. Llama-3.2-1B moves modestly\nand consistently: $+.065$ unigram recovery, $+.108$ MMD. OLMo-2 is flat on\nunigrams and moves at higher orders up to $+.214$ MMD. The Qwen pair reverses\nby representation: Qwen3.5-0.8B has the strongest unigram recovery ($+.249$)\nbut almost no MMD recovery ($+.022$), while Qwen3.5-2B worsens on all three\nL2 orders yet posts the panel maximum MMD recovery ($+.240$). Gemma-4-E2B is\nslightly negative on L2 with positive MMD ($+.134$). Architecture family does\nnot determine which geometry moves."
+ },
+ {
+  "job": "07_results_h2.tex:1",
+  "file": "paper/sections\\07_results_h2.tex",
+  "text": "The shift is visible as a distribution, not just a number: paired\nbaseline-to-ablated movement with the human floor drawn in."
+ },
+ {
+  "job": "07_results_h2.tex:2",
+  "file": "paper/sections\\07_results_h2.tex",
+  "text": "Before the numbers, why this instrument is guilty until proven innocent. A\nmodel grading model text measures taste, not human preference: the\ndistribution-tuning literature reports the same gap~\\cite{rosmine2026deft},\nevaluator favoritism toward machine generations is\ndocumented~\\citep{panickssery2024llmevaluators} and measured broadly across judge models~\\cite{laurito2025aibias}, our own judge prefers Gemma\noutputs to actual human writing, stories get severed at the 4000-character\ncutoff which punishes whoever is cut, and refusals ride along with the cone.\nRefusal accounting comes first, because it shapes everything after."
+ },
+ {
+  "job": "07_results_h2.tex:3",
+  "file": "paper/sections\\07_results_h2.tex",
+  "text": "Twenty-four of 1000 pairs are excluded, 22 from Llama-3.2-1B where how-to\nprompts trigger refusals the human reference answers; unilateral refusal\nhappens twice and moves nothing. Retention runs 0.61 to 0.93 with zero benign\nrefusals throughout: the predicted passenger effect, not a safety regression."
+ },
+ {
+  "job": "07_results_h2.tex:4",
+  "file": "paper/sections\\07_results_h2.tex",
+  "text": "After excluding pairs where both candidates refused, tie-adjusted ablated win\nrates against each model own baseline are $0.343$ (Llama-3.2-1B), $0.370$\n(OLMo-2), $0.472$ (Qwen3.5-0.8B), $0.363$ (Qwen3.5-2B), and $0.490$\n(Gemma-4-E2B), with ten-thousand-replicate prompt bootstraps and exact paired\ntests under Holm correction. The first, second, and fourth intervals sit\nwholly below parity. The planned claim that ablation improves blind writing\nquality is rejected: movement toward human distributions does not make\nindividual answers better, and for three models it makes them worse. The judge\nis kept secondary throughout, for the reason Appendix~H documents: on\nGemma-4-E2B it prefers both model conditions over actual human text."
+ },
+ {
+  "job": "08_controls.tex:0",
+  "file": "paper/sections\\08_controls.tex",
+  "text": "A shift under ablation admits cheap explanations, so the controls spend their\nbudget ruling them out. The frozen cone faces a dose-matched random subspace\n(primary), a word-deletion rule calibrated to the same unigram shift\n(conditional on a magnitude match), and symmetric full removal on a separate\nstratum (secondary). Matching is by intervention burden, mean removed norm\nper generated token, capped at four times unit dose and failed closed, never\nclipped. Every arm regenerates baseline and cone anchors in the same runtime\non a fixed 400-prompt slice."
+ },
+ {
+  "job": "08_controls.tex:1",
+  "file": "paper/sections\\08_controls.tex",
+  "text": "The nested top direction never made the starting line: matching the cone\nburden demanded $25\\times$ strength per layer and $17\\times$ in total, so the\nfirst direction carries roughly one-seventeenth of the load, independently consistent with reported refusal multidirectionality~\\cite{joad2026refusal}, and the\none-dimensional story answered itself. results: the cone beats random on all\nfive models at Holm $p=0.0005$ with random recovery negative throughout;\nlexical deletion ties or wins on Qwen3.5-0.8B and Qwen3.5-2B; full removal\nbeats the cone on validation MMD without being dose-matched. The conditional\nclaim therefore holds against dose and fails against lexical simplicity on two\nmodels: mixed, as recorded. Full numbers with confidence intervals are\ntabulated alongside."
+ },
+ {
+  "job": "09_analysis.tex:0",
+  "file": "paper/sections\\09_analysis.tex",
+  "text": "After freezing the statistics we read 150 blind pairs and converted four\nsurviving observations into follow-up tests on frozen artifacts, with no new\njudging and no protocol changes."
+ },
+ {
+  "job": "09_analysis.tex:1",
+  "file": "paper/sections\\09_analysis.tex",
+  "text": "The cone sheds almost nothing relative to baseline (numbers within three\npoints on four models, better on two), while dose-matched random ablation is\nthe fidelity vandal, down to 0.520 number preservation on Llama-3.2-1B.\nLexical deletion preserves numbers exactly where its word list spares them.\nFactual fidelity does not separate cone from baseline, but it separates both\nfrom random, which is the specificity story in miniature."
+ },
+ {
+  "job": "10_limitations_ethics.tex:0",
+  "file": "paper/sections\\10_limitations_ethics.tex",
+  "text": "The cone humanizes distributions, not taste: blind preference never favors\nablated text and significantly disfavors it on three models. The judge is one\nmodel taste profile, documented in Appendix~H, not human preference. Grammar\nmentions favor baseline 72--16, a surface cost of ablation. Refusal retention\ndrops to 0.61 on Llama-3.2-1B as a predicted passenger effect, with the\nstrength dial untested. One deterministic random draw underwrites the rank\nclaim; a second seed is unfunded. Factual drift on rephrase is designed but\nunrun, so no fidelity claim is made. External paired validation is pinned but\nreserved. English GEN references only. No result here red-teams safety or\nassists evasion: the novelty is training-free causal decomposition, and\nrefusal behavior is reported, not weaponized."
+ },
+ {
+  "job": "11_conclusion.tex:0",
+  "file": "paper/sections\\11_conclusion.tex",
+  "text": "Post-training writing voice is substantially, but not exclusively, a small\ncuttable thing. Five frozen cones move five models toward human\ndistributions; matched-dose random cuts move them away; a word-deletion rule\nmatches the cone twice. Quality does not follow distributions upward. The\nconditional, five-model, distribution-only claim stands mixed exactly where\nthe preregistered bar puts it, with every number reproducible from frozen\nartifacts. The geometry is real, specific, and insufficient, which is an\nhonest place to stop and a precise place for others to start."
+ },
+ {
+  "job": "11_conclusion.tex:1",
+  "file": "paper/sections\\11_conclusion.tex",
+  "text": "The natural refinement is local: whether state-conditioned selection among\nmultiple locally estimated humanward directions adds selective control beyond\nthis frozen global cone, with layers, operator, dose, and selection data held\nfixed. That question needs per-prompt activation archives we did not keep, so\nit belongs to a separate study with its own frozen data, not to this one. No\nmanifold is claimed here; a more flexible policy beating the global cone\nwould not by itself establish one."
+ }
+]
