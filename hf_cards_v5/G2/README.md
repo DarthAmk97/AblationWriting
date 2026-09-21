@@ -194,7 +194,7 @@ Google for the parent. Panickssery et al for the steering-vector literature. Joa
 
 ```
 @misc{ablationwriting-h2-g2-cone,
-  title = {AblationWriting H2 frozen cone: Gemma-4-E2B-it},
+  title = {AblationWriting frozen cone: Gemma-4-E2B-it},
   author = {Abdullah Mujeeb Khawaja},
   year = {2026},
   howpublished = {https://huggingface.co/amkkk/AblationWriting-H2-G2-cone}

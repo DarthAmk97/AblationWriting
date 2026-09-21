@@ -195,7 +195,7 @@ Llama team for the parent. Panickssery et al for the steering-vector literature.
 
 ```
 @misc{ablationwriting-h2-l1-cone,
-  title = {AblationWriting H2 frozen cone: Llama-3.2-1B-Instruct},
+  title = {AblationWriting frozen cone: Llama-3.2-1B-Instruct},
   author = {Abdullah Mujeeb Khawaja},
   year = {2026},
   howpublished = {https://huggingface.co/amkkk/AblationWriting-H2-L1-cone}

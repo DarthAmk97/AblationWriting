@@ -195,7 +195,7 @@ Qwen team for the parent. Panickssery et al for the steering-vector literature. 
 
 ```
 @misc{ablationwriting-h2-q20-cone,
-  title = {AblationWriting H2 frozen cone: Qwen3.5-2B},
+  title = {AblationWriting frozen cone: Qwen3.5-2B},
   author = {Abdullah Mujeeb Khawaja},
   year = {2026},
   howpublished = {https://huggingface.co/amkkk/AblationWriting-H2-Q20-cone}

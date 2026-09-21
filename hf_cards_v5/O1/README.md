@@ -195,7 +195,7 @@ AllenAI for the parent. Panickssery et al for the steering-vector literature. Jo
 
 ```
 @misc{ablationwriting-h2-o1-cone,
-  title = {AblationWriting H2 frozen cone: OLMo-2-0425-1B-Instruct},
+  title = {AblationWriting frozen cone: OLMo-2-0425-1B-Instruct},
   author = {Abdullah Mujeeb Khawaja},
   year = {2026},
   howpublished = {https://huggingface.co/amkkk/AblationWriting-H2-O1-cone}
