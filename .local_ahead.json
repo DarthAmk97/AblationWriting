@@ -173,6 +173,8 @@
     "hf_cards_v5/Q08/README.md",
     "hf_cards_v5/Q20/README.md",
     "hf_cards_v5/G2/README.md",
+    "src/paper_figures.py",
+    "src/paper_tables.py",
     "repro/verify.py",
     "repro/README.md",
     "repro/manifest.json",

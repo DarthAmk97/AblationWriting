@@ -16,11 +16,16 @@
     "metrics/tables/preliminary_summary.md": "c5c5d5e6dfa4c5a34ba8953407f15e22851292b70d6b26bc69d46e446bdc2052"
   },
   "tables": {
-    "combined_test_jmq.md": "93282e00ff4116b18988a287d669453aa2bed72b5526b55c6d0c8aed95f9d2ee",
-    "paired_mmd_jmq_l2.md": "bdb80be684195af4f1e74eb643b5bb9dedbca1eb9a230c8b9076b29e8baf0c89",
-    "grouped_distribution_shift.md": "8d93b2af9ef1f5ce0d05bb760ae1794c256213de78f3c3fd978361232a75a312",
-    "jmq.md": "29f9a688db3c8c9628da4ef67ec2ca6463e00f9c9354527b002fb3c85d9764ce",
-    "mmd.md": "911fa7957d9de016e58d22f491f66574f62425d63099aad627eb575749066677",
-    "controls.md": "1687b3f148e4a5aed2727eca76fe9a4cc2566eb6db03e17138d729befa341285"
+    "metrics/tables/combined_test_jmq.md": "93282e00ff4116b18988a287d669453aa2bed72b5526b55c6d0c8aed95f9d2ee",
+    "metrics/tables/paired_mmd_jmq_l2.md": "bdb80be684195af4f1e74eb643b5bb9dedbca1eb9a230c8b9076b29e8baf0c89",
+    "metrics/tables/grouped_distribution_shift.md": "8d93b2af9ef1f5ce0d05bb760ae1794c256213de78f3c3fd978361232a75a312",
+    "metrics/tables/jmq.md": "29f9a688db3c8c9628da4ef67ec2ca6463e00f9c9354527b002fb3c85d9764ce",
+    "metrics/tables/mmd.md": "911fa7957d9de016e58d22f491f66574f62425d63099aad627eb575749066677",
+    "metrics/tables/controls.md": "1687b3f148e4a5aed2727eca76fe9a4cc2566eb6db03e17138d729befa341285",
+    "paper/tables/T_control_main.tex": "d68893d9701a1a1646d42c6b37098013bfa743892376cdb442029bffba3afdb3",
+    "paper/tables/T_jmq_main.tex": "703eb141011de59feba0a1eb2cb4a77d5e3ac79abb830b33b05072af4c563952",
+    "paper/tables/T_style.tex": "2206716a984ec2eaac47c6d3794c66180ed62f72f2a30fdb609c0380c650c90f",
+    "paper/tables/T_domain.tex": "1be088f8f99fb6844ab85aee8e6097e6ac837628b5a79f2985f3c5a96fba9ce8",
+    "paper/tables/T_domain_top.tex": "7a5b934deb64315923497b3b747e9bb4d95180d8f1b4999b1c4eab2c26dbcbb8"
   }
 }

@@ -135,6 +135,31 @@ def verify_mmd(root):
         target.write_bytes(backup)
 
 
+def verify_paper_tables(root):
+    sys.path.insert(0, str(root / "src"))
+    import paper_tables
+    import shutil
+    tmp = Path(tempfile.mkdtemp(prefix="repro-paper-"))
+    ok = True
+    try:
+        for name, func in (("T_control_main.tex", paper_tables.control_main),
+                           ("T_jmq_main.tex", paper_tables.jmq_main),
+                           ("T_style.tex", paper_tables.style_table),
+                           ("T_domain.tex", paper_tables.domain_table),
+                           ("T_domain_top.tex", paper_tables.domain_top)):
+            before = {p.name: sha_file(p) for p in (root / "paper/tables").glob("T_*.tex")}
+            func()
+            got = {p.name: sha_file(p) for p in (root / "paper/tables").glob("T_*.tex")}
+            for key in before:
+                (tmp / key).write_bytes((root / "paper/tables" / key).read_bytes())
+            ok = note("paper/" + name, got.get(name) == before.get(name)) and ok
+    finally:
+        for key in before:
+            (root / "paper/tables" / key).write_bytes((tmp / key).read_bytes())
+        shutil.rmtree(tmp, ignore_errors=True)
+    return ok
+
+
 def verify_pinned(root, manifest):
     ok = True
     pins = manifest.get("pins", {})
@@ -162,11 +187,11 @@ def env_record():
 def main():
     parser = argparse.ArgumentParser(description="verify every results table")
     parser.add_argument("--root", type=Path, default=ROOT)
-    parser.add_argument("--only", default="", help="comma-separated keys: controls,combined,jmq,mmd,pinned")
+    parser.add_argument("--only", default="", help="comma-separated keys: controls,combined,jmq,mmd,pinned,paper")
     parser.add_argument("--write-manifest", action="store_true")
     args = parser.parse_args()
     root = args.root
-    only = set(value for value in args.only.split(",") if value) or {"controls", "combined", "jmq", "mmd", "pinned"}
+    only = set(value for value in args.only.split(",") if value) or {"controls", "combined", "jmq", "mmd", "pinned", "paper"}
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
     with tempfile.TemporaryDirectory(prefix="repro-verify-") as directory:
         tmp = Path(directory)
@@ -180,12 +205,17 @@ def main():
             verify_mmd(root)
         if "pinned" in only:
             verify_pinned(root, manifest)
+        if "paper" in only:
+            verify_paper_tables(root)
     if args.write_manifest:
         pins = {rel: sha_file(root / rel) for rel in TIER2}
         tables = {}
         for name in ("combined_test_jmq.md", "paired_mmd_jmq_l2.md", "grouped_distribution_shift.md",
                      "jmq.md", "mmd.md", "controls.md"):
-            tables[name] = sha_file(root / "metrics/tables" / name)
+            tables["metrics/tables/" + name] = sha_file(root / "metrics/tables" / name)
+        for name in ("T_control_main.tex", "T_jmq_main.tex", "T_style.tex",
+                     "T_domain.tex", "T_domain_top.tex"):
+            tables["paper/tables/" + name] = sha_file(root / "paper/tables" / name)
         manifest = {"dump_commit": DUMP_COMMIT, "dump_repo": DUMP_REPO, "env": env_record(),
                     "pins": pins, "tables": tables}
         MANIFEST.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
