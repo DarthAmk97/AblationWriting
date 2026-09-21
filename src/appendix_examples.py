@@ -14,10 +14,25 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 REF = re.compile(r"(i'?m sorry|i cannot|i can'?t|cannot comply|unable to|not able to|against policy|helpline|trusted adult)", re.I)
 
+def _esc_text(s):
+    return (str(s).replace("\\", "\\textbackslash ").replace("$", "\\$")
+            .replace("^", "\\^").replace("~", "\\~").replace("&", "\\&").replace("%", "\\%")
+            .replace("_", "\\_").replace("#", "\\#").replace("{", "\\{").replace("}", "\\}"))
+
+
 def esc(s):
-    return (str(s).replace("\\", "\\textbackslash ").replace("$", "\\$").replace("^", "\\^").replace("~", "\\~")
-            .replace("&", "\\&").replace("%", "\\%").replace("_", "\\_").replace("#", "\\#")
-            .replace("{", "\\{").replace("}", "\\}"))
+    # Inline $...$ spans in GEN abstracts carry undefined macros (\RR etc);
+    # flatten them to plain words instead of escaping (which breaks math mode).
+    parts = str(s).split("$")
+    if len(parts) % 2 == 0:
+        return _esc_text(str(s))
+    out = []
+    for index, part in enumerate(parts):
+        if index % 2 == 0:
+            out.append(_esc_text(part))
+        else:
+            out.append(re.sub(r"[$\\^{}_]", "", part))
+    return "".join(out)
 
 def pick(df, splits, want_refusal, n=5, seed=7):
     import random
