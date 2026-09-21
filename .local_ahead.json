@@ -167,6 +167,12 @@
     "hf_cards_v3/O1/README.md",
     "hf_cards_v3/Q08/README.md",
     "hf_cards_v3/Q20/README.md",
-    "hf_cards_v3/G2/README.md"
+    "hf_cards_v3/G2/README.md",
+    "repro/verify.py",
+    "repro/README.md",
+    "repro/manifest.json",
+    "paper/main.tex",
+    "paper/appendix/R_repro.tex",
+    ".github/workflows/paper.yml"
   ]
 }

@@ -1,0 +1,26 @@
+{
+  "dump_commit": "dd9e18b06e25ce2edccdf93737aae3da9b3e0c8b",
+  "dump_repo": "amkkk/AblationWriting-H2-dump",
+  "env": {
+    "python": "3.11.9",
+    "pandas": "2.3.3",
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.0",
+    "scipy": "1.17.1"
+  },
+  "pins": {
+    "metrics/tables/jmq_domain.md": "a80b7482f21505fc6c99766a5e8246dff9b3a8289cebe00bfff24a7080a1ab6e",
+    "metrics/tables/jmq_truncation.md": "5cd6534f2a4d77c6063271d1bfa68451b420fc071cf75180e9458615c45d9928",
+    "metrics/tables/style_bigword.md": "a90aa8f96458ba653937eaff0f456e60729086c8adbaaa33d22fed21ea168ba1",
+    "metrics/tables/jmq_rationale_themes.md": "f586711e325a31f6188008b96f04127f2af54462c3fb92ef8eb61ba48e5e856d",
+    "metrics/tables/preliminary_summary.md": "c5c5d5e6dfa4c5a34ba8953407f15e22851292b70d6b26bc69d46e446bdc2052"
+  },
+  "tables": {
+    "combined_test_jmq.md": "93282e00ff4116b18988a287d669453aa2bed72b5526b55c6d0c8aed95f9d2ee",
+    "paired_mmd_jmq_l2.md": "bdb80be684195af4f1e74eb643b5bb9dedbca1eb9a230c8b9076b29e8baf0c89",
+    "grouped_distribution_shift.md": "8d93b2af9ef1f5ce0d05bb760ae1794c256213de78f3c3fd978361232a75a312",
+    "jmq.md": "29f9a688db3c8c9628da4ef67ec2ca6463e00f9c9354527b002fb3c85d9764ce",
+    "mmd.md": "911fa7957d9de016e58d22f491f66574f62425d63099aad627eb575749066677",
+    "controls.md": "1687b3f148e4a5aed2727eca76fe9a4cc2566eb6db03e17138d729befa341285"
+  }
+}

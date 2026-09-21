@@ -136,7 +136,7 @@ Lexical control: the exact deletion rule lives in controls_lexical_policy.json, 
 
 ## Repro map
 
-combined_test_jmq.md from combined_test_jmq.parquet via src/combined_results.py and src/test_headline.py. paired_mmd_jmq_l2.md and grouped_distribution_shift.md likewise. jmq.md, jmq_domain.md, jmq_truncation.md, style_bigword.md, jmq_rationale_themes.md from their parquets via src/jmq_stats.py. mmd.md from per-model mmd_metrics.json via src/mmd_score.py. controls.md from control_metrics.parquet via src/control_stats.py. Prompt review via src/export_jmq_review.py. A one-command verifier is tracked as repro/, in progress.
+combined_test_jmq.md from combined_test_jmq.parquet via src/combined_results.py and src/test_headline.py. paired_mmd_jmq_l2.md and grouped_distribution_shift.md likewise. jmq.md, jmq_domain.md, jmq_truncation.md, style_bigword.md, jmq_rationale_themes.md from their parquets via src/jmq_stats.py. mmd.md from per-model mmd_metrics.json via src/mmd_score.py. controls.md from control_metrics.parquet via src/control_stats.py. Prompt review via src/export_jmq_review.py. Run python repro/verify.py: exit 0 means every number checks out. Pins and provenance in repro/manifest.json, appendix R.
 
 ## Links
 
