@@ -1,0 +1,62 @@
+[
+ {
+  "job": "L1-abstract",
+  "model": "L1",
+  "kind": "abstract",
+  "text": "TEST MMD recovery +0.092 against a dose-matched random control at -0.036, so direction matters, not just dose. Lexical deletion ties the cone here at +0.062. Blind quality preference goes the wrong way at 0.343. No GGUF by design, see Usage."
+ },
+ {
+  "job": "L1-intro",
+  "model": "L1",
+  "kind": "intro",
+  "text": "# Llama-3.2-1B that writes simpler (H2 safety-cone ablation)\n\nTake a 1B Llama, find the four activation directions tied to its safety-refusal voice, and shave them off as it writes. Word choice moves toward human level. Nothing is retrained and no weights change. Pipeline codename L1: internal shorthand from the eight-model sweep, safe to ignore.\n\nWords we keep using: rank is how many directions get cut, here 4 out of 2048. Alpha is cut strength, here 0.75, meaning 75 percent of the positive projection comes off. MMD is distance between two piles of text; smaller against human is better. Recovery is the fraction of the baseline-to-human gap closed. JMQ is a blind taste test judged by another model where 0.50 is a coin flip."
+ },
+ {
+  "job": "O1-abstract",
+  "model": "O1",
+  "kind": "abstract",
+  "text": "TEST MMD recovery +0.332 against dose-matched random at -0.045, with lexical deletion trailing at +0.051. Blind quality preference goes the wrong way at 0.370. No GGUF by design, see Usage."
+ },
+ {
+  "job": "O1-intro",
+  "model": "O1",
+  "kind": "intro",
+  "text": "# OLMo-2 1B that writes simpler (H2 safety-cone ablation)\n\nTake a 1B OLMo, find the two activation directions tied to its safety-refusal voice, and shave them off as it writes. A weak model taken to TEST to fail honestly, and it answered with the strongest cone win on the panel. Nothing is retrained and no weights change. Pipeline codename O1: internal shorthand from the eight-model sweep, safe to ignore.\n\nWords we keep using: rank is how many directions get cut, here 2 out of 2048. Alpha is cut strength, here 0.75. MMD is distance between two piles of text; smaller against human is better. Recovery is the fraction of the baseline-to-human gap closed. JMQ is a blind taste test judged by another model where 0.50 is a coin flip."
+ },
+ {
+  "job": "Q08-intro",
+  "model": "Q08",
+  "kind": "intro",
+  "text": "# Qwen3.5-0.8B that writes simpler (H2 safety-cone ablation)\n\nTake a 0.8B Qwen, find the eight activation directions tied to its safety-refusal voice, and shave them off at full strength as it writes. The honest null of the panel: the geometry does nothing here and plain word deletion wins instead. Nothing is retrained and no weights change. Pipeline codename Q08: internal shorthand from the eight-model sweep, safe to ignore.\n\nWords we keep using: rank is how many directions get cut, here 8 out of 2048. Alpha is cut strength, here 1.0, full removal of the positive projection. MMD is distance between two piles of text; smaller against human is better. Recovery is the fraction of the baseline-to-human gap closed. JMQ is a blind taste test judged by another model where 0.50 is a coin flip."
+ },
+ {
+  "job": "Q08-fieldnote",
+  "model": "Q08",
+  "kind": "fieldnote",
+  "text": "Wins the casual domains and loses the formal ones, the exact inverse of a geometry story. The cone is null here and lexical deletion wins outright, so this card is really a lexical card wearing a cone costume. Quality parity at 0.472, the closest thing to a win on the panel. Case-level color: exports/jmq_case_probe.md."
+ },
+ {
+  "job": "Q20-abstract",
+  "model": "Q20",
+  "kind": "abstract",
+  "text": "TEST MMD +0.411 against random at -0.091, but lexical deletion ties it at +0.436 with p = 0.22. Blind quality preference goes the wrong way at 0.363. No GGUF by design, see Usage. Both the cone and the lexical rule ship in this repo, pick your fighter."
+ },
+ {
+  "job": "Q20-intro",
+  "model": "Q20",
+  "kind": "intro",
+  "text": "# Qwen3.5-2B that writes simpler (H2 safety-cone ablation)\n\nTake a 2B Qwen, find 32 activation directions tied to its safety-refusal voice, and shave them off gently as it writes. Gentle strength won the freeze where force failed on the family twin. Strong cone, worthy lexical rival. Nothing is retrained and no weights change. Pipeline codename Q20: internal shorthand from the eight-model sweep, safe to ignore.\n\nWords we keep using: rank is how many directions get cut, here 32 out of 2048. Alpha is cut strength, here 0.25, a gentle push. MMD is distance between two piles of text; smaller against human is better. Recovery is the fraction of the baseline-to-human gap closed. JMQ is a blind taste test judged by another model where 0.50 is a coin flip."
+ },
+ {
+  "job": "G2-fieldnote",
+  "model": "G2",
+  "kind": "fieldnote",
+  "text": "Three 21-19s and a wiki outlier, the most well-rounded card here. And the punchline: the judge prefers these outputs to actual human writing. The judge is a taste machine, not a human, see appendix H in the paper. So close to human the broken meter cannot tell. Case-level color: exports/jmq_case_probe.md."
+ },
+ {
+  "job": "G2-intro",
+  "model": "G2",
+  "kind": "intro",
+  "text": "# Gemma-4-E2B that writes simpler (H2 safety-cone ablation)\n\nTake a 2B Gemma, find the eight activation directions tied to its safety-refusal voice, and shave them off as it writes. The cleanest cone win on the panel, and lexical deletion barely registers. Nothing is retrained and no weights change. Pipeline codename G2: internal shorthand from the eight-model sweep, safe to ignore.\n\nWords we keep using: rank is how many directions get cut, here 8 out of 2048. Alpha is cut strength, here 0.5. MMD is distance between two piles of text; smaller against human is better. Recovery is the fraction of the baseline-to-human gap closed. JMQ is a blind taste test judged by another model where 0.50 is a coin flip."
+ }
+]
