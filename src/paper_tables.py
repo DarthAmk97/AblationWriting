@@ -131,6 +131,26 @@ def refusal_table():
     print("T-refusal-ok", flush=True)
 
 
+def drift_table():
+    a = pd.read_parquet(ROOT / "metrics/drift_audit.parquet") if (ROOT / "metrics/drift_audit.parquet").exists() else None
+    if a is None:
+        a = pd.read_csv(ROOT / "metrics/drift_audit.csv")
+    L = ["\\begin{tabular}{lcccc}", "\\toprule",
+         "Model & Base & Cone & Random & Lexical \\\\",
+         "\\midrule"]
+    for m in ["G2", "L1", "O1", "Q08", "Q20"]:
+        g = a[a["model"] == m].set_index("arm")
+        L.append("%s & %.3f & %.3f & %.3f & %.3f \\\\" % (
+            HUMAN[m] + " num", g.loc["ANCHOR-BASE", "num_rate"], g.loc["ANCHOR-CONE", "num_rate"],
+            g.loc["RAND-RANK-DOSE", "num_rate"], g.loc["LEX-MATCH", "num_rate"]))
+        L.append("%s & %.3f & %.3f & %.3f & %.3f \\\\" % (
+            HUMAN[m] + " ent", g.loc["ANCHOR-BASE", "ent_rate"], g.loc["ANCHOR-CONE", "ent_rate"],
+            g.loc["RAND-RANK-DOSE", "ent_rate"], g.loc["LEX-MATCH", "ent_rate"]))
+    L += ["\\bottomrule", "\\end{tabular}"]
+    (OUT / "T_drift.tex").write_text("\n".join(L) + "\n", encoding="utf-8")
+    print("T-drift-ok", flush=True)
+
+
 def main():
     control_main()
     jmq_main()
@@ -139,6 +159,7 @@ def main():
     domain_top()
     stage_table()
     refusal_table()
+    drift_table()
     print("ALL-TABLES-DONE")
 
 

@@ -148,7 +148,8 @@ def verify_paper_tables(root):
                            ("T_domain.tex", paper_tables.domain_table),
                            ("T_domain_top.tex", paper_tables.domain_top),
                            ("T_stages.tex", paper_tables.stage_table),
-                           ("T_refusal.tex", paper_tables.refusal_table)):
+                           ("T_refusal.tex", paper_tables.refusal_table),
+                           ("T_drift.tex", paper_tables.drift_table)):
             before = {p.name: sha_file(p) for p in (root / "paper/tables").glob("T_*.tex")}
             func()
             got = {p.name: sha_file(p) for p in (root / "paper/tables").glob("T_*.tex")}
