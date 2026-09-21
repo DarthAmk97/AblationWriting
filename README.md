@@ -10,44 +10,44 @@ Five frozen safety cones on five small instruct models. 514-run mirror, 5,000 bl
 |---|---|
 | Cone exists and does something causal | mixed |
 | Cone moves text toward human distribution | mixed, MMD yes 5 of 5, taste no |
-| Writing quality improves | REJECTED, L1, O1, Q20 significantly worse, rest parity |
+| Writing quality improves | REJECTED, Llama, OLMo and Qwen-2B significantly worse, rest parity |
 | It is just the dose, any direction works | REJECTED, random hurts 5 of 5, p = 0.0005 |
-| A word-deletion rule explains it | mixed, wins Q08, ties Q20 |
+| A word-deletion rule explains it | mixed, wins Qwen-0.8B, ties Qwen-2B |
 
 Details and CIs in claims_ledger.md. Nothing here is overstated; the ledger would not allow it.
 
-## The cast, human names first
+## The cast
 
-Pipeline codenames are internal shorthand from the eight-model sweep. Use the left column.
+| Model | Cone | One-line read |
+|---|---|---|
+| Llama-3.2-1B-Instruct | rank 4, layers 8-11 | refusal overlap, lexical ties |
+| OLMo-2-0425-1B-Instruct | rank 2, layers 8-11 | arxiv specialist, strongest cone win |
+| Qwen3.5-0.8B | rank 8, layers 18-22 | the honest null, lexical wins |
+| Qwen3.5-2B | rank 32, layers 11-15 | big cone, lexical ties at the top |
+| Gemma-4-E2B-it | rank 8, layers 11-16 | cleanest cone win |
 
-| Model | Codename | Cone | One-line read |
-|---|---|---|---|
-| Llama-3.2-1B-Instruct | L1 | rank 4, layers 8-11 | refusal overlap, lexical ties |
-| OLMo-2-0425-1B-Instruct | O1 | rank 2, layers 8-11 | arxiv specialist, strongest cone win |
-| Qwen3.5-0.8B | Q08 | rank 8, layers 18-22 | the honest null, lexical wins |
-| Qwen3.5-2B | Q20 | rank 32, layers 11-15 | big cone, lexical ties at the top |
-| Gemma-4-E2B-it | G2 | rank 8, layers 11-16 | cleanest cone win |
+Code and file names use short keys for these five models; prose does not.
 
 ## The taste test, 5,000 blind pairs
 
-The judge preferred baseline almost everywhere. Ablated win share, refusal-filtered: L1 0.343, O1 0.370, Q08 0.472, Q20 0.363, G2 0.490. Zero improvements, three significant losses.
+The judge preferred baseline almost everywhere. Ablated win share, refusal-filtered: Llama 0.343, OLMo 0.370, Qwen-0.8B 0.472, Qwen-2B 0.363, Gemma 0.490. Zero improvements, three significant losses.
 
 Best cells on the whole panel:
 
 | Cell | Score | Note |
 |---|---|---|
-| O1 arxiv | 27-13 | the one heroic cell, carries pooled arxiv to 102-98 |
-| G2 wikipedia | 25-15 | the only wiki win on the panel |
-| Q08 reddit | 23-17 | casual internet, Q08 territory |
-| Q08 wikihow | 22-17 | same story, how-to land |
+| OLMo arxiv | 27-13 | the one heroic cell, carries pooled arxiv to 102-98 |
+| Gemma wikipedia | 25-15 | the only wiki win on the panel |
+| Qwen-0.8B reddit | 23-17 | casual internet, its territory |
+| Qwen-0.8B wikihow | 22-17 | same story, how-to land |
 
 Worst cells:
 
 | Cell | Score | Note |
 |---|---|---|
-| Q20 wikipedia | 5-34 | the judge has seen enough |
-| O1 wikihow | 8-32 | the specialist tax, arxiv or nothing |
-| L1 wikipedia | 9-29 | plus L1 lost half its wikihow cell to refusals, n = 20 |
+| Qwen-2B wikipedia | 5-34 | the judge has seen enough |
+| OLMo wikihow | 8-32 | the specialist tax, arxiv or nothing |
+| Llama wikipedia | 9-29 | plus Llama lost half its wikihow cell to refusals, n = 20 |
 
 Full grid with Wilson CIs: metrics/tables/jmq_domain.md.
 
@@ -71,11 +71,11 @@ Why the judge says no, in its own words: format decides 45 percent of pairs. Whe
 
 | Model | Cone | Random, dose-matched | Lexical | Read |
 |---|---|---|---|---|
-| G2 | +0.193 | -0.067 | +0.028 | clean cone win |
-| L1 | +0.092 | -0.036 | +0.062 | cone wins, lexical ties |
-| O1 | +0.332 | -0.045 | +0.051 | strongest win on the panel |
-| Q08 | +0.020 | -0.134 | +0.182 | cone null, lexical wins outright |
-| Q20 | +0.411 | -0.091 | +0.436 | cone strong, lexical ties at the top |
+| Gemma | +0.193 | -0.067 | +0.028 | clean cone win |
+| Llama | +0.092 | -0.036 | +0.062 | cone wins, lexical ties |
+| OLMo | +0.332 | -0.045 | +0.051 | strongest win on the panel |
+| Qwen-0.8B | +0.020 | -0.134 | +0.182 | cone null, lexical wins outright |
+| Qwen-2B | +0.411 | -0.091 | +0.436 | cone strong, lexical ties at the top |
 
 Random hurts everywhere with p = 0.0005, so dose alone is dead. Lexical deletion is the rival that will not leave: it wins one, ties one. Full table with CIs: metrics/tables/controls.md.
 
