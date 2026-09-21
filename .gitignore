@@ -28,3 +28,5 @@ hf_incoming/
 hub_card*.md
 hub_cards_dump_README.md
 fetch_appendix/
+paper/
+.github/
