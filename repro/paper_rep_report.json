@@ -1,0 +1,197 @@
+{
+ "A_metrics.tex:0": [
+  "CHECK",
+  968,
+  2982
+ ],
+ "A_metrics.tex:1": [
+  "CHECK",
+  1243,
+  3609
+ ],
+ "A_metrics.tex:2": [
+  "CHECK",
+  651,
+  2998
+ ],
+ "B_prompts.tex:0": [
+  "CHECK",
+  583,
+  2615
+ ],
+ "C_models_data.tex:0": [
+  "CHECK",
+  623,
+  2381
+ ],
+ "F_preservation.tex:0": [
+  "CHECK",
+  551,
+  2407
+ ],
+ "G_negatives.tex:0": [
+  "CHECK",
+  1017,
+  3491
+ ],
+ "H_jmq.tex:0": [
+  "OK",
+  462,
+  483
+ ],
+ "H_jmq.tex:1": [
+  "OK",
+  561,
+  634
+ ],
+ "01_abstract.tex:0": [
+  "CHECK",
+  899,
+  2719
+ ],
+ "02_introduction.tex:0": [
+  "CHECK",
+  452,
+  2221
+ ],
+ "02_introduction.tex:1": [
+  "OK",
+  526,
+  547
+ ],
+ "02_introduction.tex:2": [
+  "CHECK",
+  428,
+  1644
+ ],
+ "02_introduction.tex:3": [
+  "CHECK",
+  590,
+  2659
+ ],
+ "03_related_work.tex:0": [
+  "STALE-SOURCE",
+  0,
+  0
+ ],
+ "03_related_work.tex:1": [
+  "STALE-SOURCE",
+  0,
+  0
+ ],
+ "03_related_work.tex:2": [
+  "STALE-SOURCE",
+  0,
+  0
+ ],
+ "04_hypotheses.tex:0": [
+  "CHECK",
+  386,
+  1831
+ ],
+ "04_hypotheses.tex:1": [
+  "OK",
+  695,
+  759
+ ],
+ "05_method.tex:0": [
+  "STALE-SOURCE",
+  0,
+  0
+ ],
+ "05_method.tex:1": [
+  "STALE-SOURCE",
+  0,
+  0
+ ],
+ "05_method.tex:2": [
+  "STALE-SOURCE",
+  0,
+  0
+ ],
+ "05_method.tex:3": [
+  "STALE-SOURCE",
+  0,
+  0
+ ],
+ "06_experimental_setup.tex:0": [
+  "STALE-SOURCE",
+  0,
+  0
+ ],
+ "06_experimental_setup.tex:1": [
+  "STALE-SOURCE",
+  0,
+  0
+ ],
+ "06_experimental_setup.tex:2": [
+  "STALE-SOURCE",
+  0,
+  0
+ ],
+ "06_experimental_setup.tex:3": [
+  "STALE-SOURCE",
+  0,
+  0
+ ],
+ "07_results_h2.tex:0": [
+  "CHECK",
+  574,
+  2642
+ ],
+ "07_results_h2.tex:1": [
+  "OK",
+  125,
+  1350
+ ],
+ "07_results_h2.tex:2": [
+  "CHECK",
+  631,
+  2526
+ ],
+ "07_results_h2.tex:3": [
+  "CHECK",
+  302,
+  469
+ ],
+ "07_results_h2.tex:4": [
+  "OK",
+  735,
+  858
+ ],
+ "08_controls.tex:0": [
+  "CHECK",
+  558,
+  2498
+ ],
+ "08_controls.tex:1": [
+  "CHECK",
+  783,
+  3263
+ ],
+ "09_analysis.tex:0": [
+  "CHECK",
+  182,
+  1253
+ ],
+ "09_analysis.tex:1": [
+  "CHECK",
+  432,
+  2795
+ ],
+ "10_limitations_ethics.tex:0": [
+  "CHECK",
+  800,
+  3431
+ ],
+ "11_conclusion.tex:0": [
+  "CHECK",
+  574,
+  2964
+ ],
+ "11_conclusion.tex:1": [
+  "CHECK",
+  493,
+  2219
+ ]
+}
