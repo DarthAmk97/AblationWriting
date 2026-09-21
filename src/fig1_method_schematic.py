@@ -25,7 +25,6 @@ for i, (x, label) in enumerate(stages):
     if i < len(stages) - 1:
         ax.annotate("", xy=(x + 1.55, 1.5), xytext=(x + 2.15, 1.5),
                     arrowprops={"arrowstyle": "->", "color": "black"})
-ax.set_title("Figure 1: method schematic (data flow, left to right)", fontsize=9, pad=8)
 fig.tight_layout()
 fig.savefig("paper/figures/fig1_method.png", dpi=300)
 fig.savefig("paper/figures/fig1_method.pdf")

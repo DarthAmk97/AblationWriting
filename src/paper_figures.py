@@ -41,10 +41,9 @@ for ax, m in zip(axes, MODELS):
                 mat[i, j] = v.max()
     im = ax.imshow(mat, aspect="auto", cmap="Greens", vmin=-0.1, vmax=0.4)
     ax.set_xticks(range(len(ranks)), ranks)
-    ax.set_yticks(range(len(wins)), wins, fontsize=7)
+    ax.set_yticks(range(len(wins)), wins, fontsize=8)
     ax.set_title(HUMAN[m], fontsize=8)
     ax.set_xlabel("rank")
-fig.suptitle("Figure 2: sweep recovery (best unigram R by window and rank)", fontsize=9)
 fig.colorbar(im, ax=axes, label="R L2-1", shrink=0.8)
 savefig(fig, "fig2_sweep_heatmap")
 
@@ -59,7 +58,6 @@ for m, d in damage.items():
     ax.annotate(HUMAN[m], (d, cone[m]), textcoords="offset points", xytext=(5, 5), fontsize=7)
 ax.set_xlabel("refusal damage (1 - retention)")
 ax.set_ylabel("cone TEST MMD recovery")
-ax.set_title("Figure 3: selectivity frontier (Gemma gate green, refusal number n/a)", fontsize=9)
 savefig(fig, "fig3_selectivity_frontier")
 
 # Fig 4b: control bars with CIs
@@ -79,7 +77,6 @@ ax.set_xticks(x, [HUMAN[m] for m in MODELS], fontsize=7)
 ax.set_ylabel("TEST MMD recovery")
 ax.axhline(0, color="black", linewidth=0.8)
 ax.legend(fontsize=7)
-ax.set_title("Figure 4: falsification bars, cone vs dose-matched random vs lexical", fontsize=9)
 savefig(fig, "fig4_control_bars")
 t[t["arm"].isin(arms + ["ANCHOR-BASE"])].to_parquet(DATA / "fig4_control_bars.parquet", index=False)
 
@@ -105,7 +102,6 @@ for ax, m in zip(axes, MODELS):
     ax.set_title(HUMAN[m], fontsize=8)
     ax.set_xlabel("components")
 axes[0].set_ylabel("cumulative variance share")
-fig.suptitle("Figure 5: discovery spectra with frozen ranks (dashed)", fontsize=9)
 savefig(fig, "fig5_spectra")
 
 # Pre/post: distance to human before and after the cone, per model
@@ -123,7 +119,6 @@ for ax, key, title in ((axes[0], "l2_1", "L2-1 distance to human"),
     ax.set_xticks(xs, [HUMAN[m] for m in MODELS], fontsize=7)
     ax.set_title(title, fontsize=8)
 axes[0].legend(fontsize=7)
-fig.suptitle("Pre/post: how far each model stands from human writing, before and after", fontsize=9)
 savefig(fig, "fig_prepost")
 combo.reset_index()[["model"]].to_parquet(DATA / "fig_prepost.parquet", index=False)
 print("ALL-FIGS-DONE")
