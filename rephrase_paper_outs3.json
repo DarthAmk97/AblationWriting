@@ -1,0 +1,42 @@
+[
+ {
+  "job": "sections\\03_related_work.tex:0",
+  "out": "Our novelty claim is training-free causal decomposition and selective erasure of post-training writing geometry. It is not detector evasion, and no result here is framed that way."
+ },
+ {
+  "job": "sections\\04_hypotheses.tex:0",
+  "out": "Support must have secured a reliable reduction in the human-gap on primary distributional metrics, while all preservation gates that passed were evaluated on prompts never used for geometry selection."
+ },
+ {
+  "job": "sections\\04_hypotheses.tex:1",
+  "out": "Rejection or weakening triggers were documented beforehand, including: a rank that grew without an elbow, broad suppression taking over the work, failure to perform out of domain, or random subspaces matching the gains."
+ },
+ {
+  "job": "sections\\04_hypotheses.tex:2",
+  "out": "Clause (2) was rejected (Section~\\ref{sec:results}). Clauses (1), (3), and (4) were adjudicated by model in Sections~\\ref{sec:results}--\\ref{sec:controls}, with the falsification suite serving as the final arbiter. No hypotheses were rewritten after seeing which geometry won; post-hoc observations are consistently labeled accordingly."
+ },
+ {
+  "job": "sections\\05_methodology.tex:0",
+  "out": "A single direction can steer refusal yet miss the behavior itself, which spans cones, entangles with neighbors, and sometimes decomposes into local pieces. Narrative authorship gives the same warning from the data side. Rank one therefore stays in the design as an appendix baseline and nothing else. Figure~\\ref{fig:method} traces the pipeline left to right: paired activations, whitening and cone fit, protection scrub, generated-token hook, and distribution plus preservation evaluation."
+ },
+ {
+  "job": "sections\\06_experimental_setup.tex:0",
+  "out": "Machine writing differs from human writing as a distribution even under shared prompts, so the experiment is built to isolate that gap causally: paired sampling under identical prompts, staged selection on disjoint splits, and a held-out test that no freeze decision ever touches."
+ },
+ {
+  "job": "sections\\06_experimental_setup.tex:1",
+  "out": "Rank choice is empirical, not theoretical, and Figure~\\ref{fig:sweep} explains why the grid matters: every freeze in the panel table originates from a cell of the depth-window by rank sweep."
+ },
+ {
+  "job": "sections\\06_experimental_setup.tex:2",
+  "out": "Recovery rises then falls with rank on every model as Figure~\\ref{fig:ranks} traces, and the freeze takes the rank that survives behavior gates on the 512-prompt validation split, not the screen maximum. Hence rank 2 for OLMo-2 1B and rank 32 for Qwen3.5-2B despite negative screens: the validation split, not the screen, decides."
+ },
+ {
+  "job": "sections\\07_results_h2.tex:0",
+  "out": "After removing pairs where both candidates declined, the tie-adjusted ablated win rates against each model's own baseline are: Llama-3.2-1B at $0.343$, OLMo-2 at $0.370$, Qwen3.5-0.8B at $0.472$, Qwen3.5-2B at $0.363$, and Gemma-4-E2B at $0.490$. These results are based on ten-thousand prompt bootstraps and exact paired tests, using Holm correction for multiple comparisons."
+ },
+ {
+  "job": "sections\\07_results_h2.tex:1",
+  "out": "The first, second, and fourth results fall completely below the parity threshold. Consequently, the claim that ablation improves blind writing quality is rejected: shifting toward human distributions does not make individual answers better, and for three of the four models, it actually makes them worse. Additionally, the judge remains secondary throughout the evaluation, as Appendix H documents: on Gemma-4-E2B, the model preferred both model conditions over actual human text."
+ }
+]

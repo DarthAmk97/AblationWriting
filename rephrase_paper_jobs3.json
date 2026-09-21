@@ -1,0 +1,52 @@
+[
+ {
+  "job": "sections\\03_related_work.tex:0",
+  "file": "paper/sections\\03_related_work.tex",
+  "text": "Our novelty claim is training-free causal decomposition and selective\nerasure of post-training writing geometry. It is not detector evasion, and\nno result here is framed that way."
+ },
+ {
+  "job": "sections\\04_hypotheses.tex:0",
+  "file": "paper/sections\\04_hypotheses.tex",
+  "text": "Support must have secured a reliable reduction in the human-gap on primary distributional metrics, while all preservation gates that passed were evaluated on prompts never used for geometry selection."
+ },
+ {
+  "job": "sections\\04_hypotheses.tex:1",
+  "file": "paper/sections\\04_hypotheses.tex",
+  "text": "Rejection or weakening triggers were documented beforehand, including: a rank that grew without an elbow, broad suppression taking over the work, failure to perform out of domain, or random subspaces matching the gains."
+ },
+ {
+  "job": "sections\\04_hypotheses.tex:2",
+  "file": "paper/sections\\04_hypotheses.tex",
+  "text": "Clause (2) was rejected (Section~\\ref{sec:results}).\nClauses (1), (3), and (4) were adjudicated by model in Sections~\\ref{sec:results}--\\ref{sec:controls}, with the falsification suite serving as the final arbiter. No hypotheses were rewritten after seeing which geometry won; post-hoc observations are consistently labeled accordingly."
+ },
+ {
+  "job": "sections\\05_methodology.tex:0",
+  "file": "paper/sections\\05_methodology.tex",
+  "text": "A single direction can steer refusal yet miss the behavior itself, which\nspans cones, entangles with neighbors, and sometimes decomposes into local\npieces. Narrative authorship gives the same warning from the data side.\nRank one therefore stays in the design as an appendix baseline and nothing\nelse. Figure~\\ref{fig:method} traces the pipeline left to right: paired\nactivations, whitening and cone fit, protection scrub, generated-token\nhook, and distribution plus preservation evaluation."
+ },
+ {
+  "job": "sections\\06_experimental_setup.tex:0",
+  "file": "paper/sections\\06_experimental_setup.tex",
+  "text": "Machine writing differs from human writing as a distribution even under\nshared prompts, so the experiment is built to isolate that gap causally:\npaired sampling under identical prompts, staged selection on disjoint\nsplits, and a held-out test that no freeze decision ever touches."
+ },
+ {
+  "job": "sections\\06_experimental_setup.tex:1",
+  "file": "paper/sections\\06_experimental_setup.tex",
+  "text": "Rank choice is empirical, not theoretical, and\nFigure~\\ref{fig:sweep} shows why the grid matters: every freeze in the\npanel table comes from a cell of the depth-window by rank sweep."
+ },
+ {
+  "job": "sections\\06_experimental_setup.tex:2",
+  "file": "paper/sections\\06_experimental_setup.tex",
+  "text": "Recovery rises then falls with rank on every model, as\nFigure~\\ref{fig:ranks} traces, and the freeze takes the rank that survives\nbehavior gates on the 512-prompt validation split, not the screen maximum.\nHence rank 2 for OLMo-2 1B and rank 32 for Qwen3.5-2B despite negative\nscreens: the validation split, not the screen, decides."
+ },
+ {
+  "job": "sections\\07_results_h2.tex:0",
+  "file": "paper/sections\\07_results_h2.tex",
+  "text": "After removing pairs where both candidates declined, the tie-adjusted ablated win rates against each model's own baseline are: Llama-3.2-1B at $0.343$, OLMo-2 at $0.370$, Qwen3.5-0.8B at $0.472$, Qwen3.5-2B at $0.363$, and Gemma-4-E2B at $0.490$. These results are based on ten-thousand prompt bootstraps and exact paired tests, using Holm correction for multiple comparisons."
+ },
+ {
+  "job": "sections\\07_results_h2.tex:1",
+  "file": "paper/sections\\07_results_h2.tex",
+  "text": "The first, second, and fourth results fall completely below the parity threshold. Consequently, the claim that ablation improves blind writing quality is rejected: shifting toward human distributions does not make individual answers better, and for three of the four models, it actually makes them worse. Additionally, the judge remains secondary throughout the evaluation, as Appendix H documents: on Gemma-4-E2B, the model preferred both model conditions over actual human text."
+ }
+]
