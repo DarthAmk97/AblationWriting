@@ -146,7 +146,9 @@ def verify_paper_tables(root):
                            ("T_jmq_main.tex", paper_tables.jmq_main),
                            ("T_style.tex", paper_tables.style_table),
                            ("T_domain.tex", paper_tables.domain_table),
-                           ("T_domain_top.tex", paper_tables.domain_top)):
+                           ("T_domain_top.tex", paper_tables.domain_top),
+                           ("T_stages.tex", paper_tables.stage_table),
+                           ("T_refusal.tex", paper_tables.refusal_table)):
             before = {p.name: sha_file(p) for p in (root / "paper/tables").glob("T_*.tex")}
             func()
             got = {p.name: sha_file(p) for p in (root / "paper/tables").glob("T_*.tex")}
@@ -214,7 +216,8 @@ def main():
                      "jmq.md", "mmd.md", "controls.md"):
             tables["metrics/tables/" + name] = sha_file(root / "metrics/tables" / name)
         for name in ("T_control_main.tex", "T_jmq_main.tex", "T_style.tex",
-                     "T_domain.tex", "T_domain_top.tex"):
+                     "T_domain.tex", "T_domain_top.tex", "T_stages.tex",
+                     "T_refusal.tex"):
             tables["paper/tables/" + name] = sha_file(root / "paper/tables" / name)
         manifest = {"dump_commit": DUMP_COMMIT, "dump_repo": DUMP_REPO, "env": env_record(),
                     "pins": pins, "tables": tables}

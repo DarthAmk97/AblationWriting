@@ -35,15 +35,16 @@ for ax, m in zip(axes, MODELS):
     mat = np.full((len(wins), len(ranks)), np.nan)
     for i, w in enumerate(wins):
         for j, r in enumerate(ranks):
-            v = d[(d["window"] == w) & (d["rank"] == r)]["R_L2_1"]
+            v = d[(d["window"] == w) & (d["rank"] == r)]["R_L2"]
+            v = v[v.notna()]
             if len(v):
                 mat[i, j] = v.max()
-    im = ax.imshow(mat, aspect="auto", cmap="Greens", vmin=-0.1, vmax=0.5)
+    im = ax.imshow(mat, aspect="auto", cmap="Greens", vmin=-0.1, vmax=0.4)
     ax.set_xticks(range(len(ranks)), ranks)
     ax.set_yticks(range(len(wins)), wins, fontsize=7)
     ax.set_title(HUMAN[m], fontsize=8)
     ax.set_xlabel("rank")
-fig.suptitle("Figure 2: sweep recovery (best R L2-1 by window and rank)", fontsize=9)
+fig.suptitle("Figure 2: sweep recovery (best unigram R by window and rank)", fontsize=9)
 fig.colorbar(im, ax=axes, label="R L2-1", shrink=0.8)
 savefig(fig, "fig2_sweep_heatmap")
 
@@ -106,4 +107,23 @@ for ax, m in zip(axes, MODELS):
 axes[0].set_ylabel("cumulative variance share")
 fig.suptitle("Figure 5: discovery spectra with frozen ranks (dashed)", fontsize=9)
 savefig(fig, "fig5_spectra")
+
+# Pre/post: distance to human before and after the cone, per model
+combo = pd.read_parquet(ROOT / "metrics/combined_test_jmq.parquet").set_index("model")
+fig, axes = plt.subplots(1, 2, figsize=(8, 3.2), sharey=False)
+for ax, key, title in ((axes[0], "l2_1", "L2-1 distance to human"),
+                       (axes[1], "mmd_test", "MMD distance to human")):
+    xs = np.arange(len(MODELS))
+    base = [combo.loc[m, key + "_base"] for m in MODELS]
+    abl = [combo.loc[m, key + "_ablated"] for m in MODELS]
+    floor = [combo.loc[m, key + "_floor"] for m in MODELS]
+    ax.bar(xs - 0.22, base, 0.22, label="baseline")
+    ax.bar(xs, abl, 0.22, label="ablated")
+    ax.bar(xs + 0.22, floor, 0.22, label="human floor")
+    ax.set_xticks(xs, [HUMAN[m] for m in MODELS], fontsize=7)
+    ax.set_title(title, fontsize=8)
+axes[0].legend(fontsize=7)
+fig.suptitle("Pre/post: how far each model stands from human writing, before and after", fontsize=9)
+savefig(fig, "fig_prepost")
+combo.reset_index()[["model"]].to_parquet(DATA / "fig_prepost.parquet", index=False)
 print("ALL-FIGS-DONE")
