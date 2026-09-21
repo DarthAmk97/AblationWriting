@@ -1,0 +1,42 @@
+[
+ {
+  "job": "RW2:0",
+  "out": "Each strand of related work reviewed below informed a specific design decision in this study. Taken together, they motivate the form of the intervention."
+ },
+ {
+  "job": "RW2:1",
+  "out": "\\paragraph{Single directions: the starting point we outgrew.} Refusal can be steered with a single residual-stream direction~\\cite{arditi2024refusal}, which is constructed as a mean difference over contrastive prompts. We retain this construction for our own directions but rank one only as an appendix baseline, because the remaining literature warns against stopping at a single direction."
+ },
+ {
+  "job": "RW2:2",
+  "out": "\\paragraph{Cones: the working object.} Behavior captured by a single steerable direction more generally spans cones and manifolds~\\cite{wollschlager2025cones}, and orthogonality alone does not imply independence under intervention. Just as refusal required a cone rather than a vector, writing is treated here as a positive-part cone rather than a subspace. In particular, the intervention applies only where the projection onto the basis relative to a reference mean is positive and leaves non-positive components unchanged. Without this positive-part clamp, the intervention removes whatever the projection captures, and the falsification suite shows that this unclamped variant fails."
+ },
+ {
+  "job": "RW2:3",
+  "out": "\\paragraph{Disentanglement: the scrub.}\nNeighboring mechanisms remain entangled until they are explicitly disentangled~\\cite{siu2026repit}. Raw writing directions conflate voice with instruction following. We therefore construct a separate protection basis from paired counterfactuals covering brevity, schema, facts, arithmetic, and refusal-adjacent compliance, and subtract its span from the writing basis before any ablation, with strength $\\rho$. On OLMo-2 1B, the effect persisted under a light scrub and was removed under the full scrub. Both outcomes are reported."
+ },
+ {
+  "job": "RW2:4",
+  "out": "\\paragraph{Local multi-directionality: why rank is searched, not assumed.}\nLocal directions can outperform any centroid~\\cite{piras2026som}, and our failed single-direction control independently supports this point: matching the cone ablation with its top direction alone required $25\\times$ strength per layer against a cap of four. We therefore fit cones per depth window across ranks 2--32 and allow the validation split, never the screening maximum, to select rank. Rank is thus an outcome rather than an assumed hyperparameter."
+ },
+ {
+  "job": "RW2:5",
+  "out": "\\paragraph{Narrative signal: why low rank at all.} Authorship signal is distributed redundantly across discourse dimensions~\\cite{russell2026storyscope}. A phenomenon distributed this way argues against rank one on empirical grounds, just as the geometry argues against it on mechanistic grounds; both considerations point in the same direction, so the study begins at low rank with an appendix baseline rather than at rank one."
+ },
+ {
+  "job": "RW2:6",
+  "out": "\\paragraph{Distribution tuning: the scale discipline.} Large-scale distribution tuning establishes the evaluation discipline followed here~\\cite{rosmine2026deft}: fixed blind slices, bootstrap uncertainty, family-wise correction, and metrics that separate word habits (L2), outlier robustness (JSD), and embedding geometry (MMD, same embedder family). Where that work trains models to match distributions, we intervene to test whether a small ablation moves them. The instruments are shared, while the direction of inference is reversed."
+ },
+ {
+  "job": "RW2:7",
+  "out": "Automated judges favor machine-generated outputs, including their own~\\cite{panickssery2024llmevaluators}, and judge models exhibit systematic bias~\\cite{laurito2025aibias}. Our judge favors one model's outputs over actual human writing, and blind preference is therefore used as a taste stress test that can falsify a quality claim but cannot establish one, so the quality claim did not survive this test."
+ },
+ {
+  "job": "GNEG:0",
+  "out": "Four control epochs failed before the retained epoch, where the first one exhibited an exact bit-replay mismatch against 8 of 8 cases prior to any hooks executing, due to driver version differences making bit-exact replay impossible, so the check measured the environment rather than the hook. In the second and third epochs, matching the nested top direction to the cone burden required 25 times strength per layer and 17 times total strength against a cap of 4.0; the single direction therefore carried approximately one-seventeenth of the required load, and the arm was dropped as dose-infeasible. In the fourth epoch, a deterministic merge-path defect occurred after all generations had completed, and the surviving progress was adopted under hash verification."
+ },
+ {
+  "job": "GNEG:1",
+  "out": "Three additional models did not reach headline reporting. The LiquidAI hybrid scored zero across 62 configurations, SmolLM3-3B was reverted before testing, and Gemma-4-E4B was stopped after smoke screening. None were excluded from reporting; all constrain any universal interpretation of the positive five."
+ }
+]
