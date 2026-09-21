@@ -1,6 +1,6 @@
 # Evidence registry
 
-Generated `2026-09-20T22:08:13.521682+00:00` by `src/build_evidence_registry.py`. Every paper-relevant artifact, asset, and reproducibility record: path, bytes, SHA-256, and store location. Re-run after new finals land.
+Generated `2026-09-21T00:20:54.090547+00:00` by `src/build_evidence_registry.py`. Every paper-relevant artifact, asset, and reproducibility record: path, bytes, SHA-256, and store location. Re-run after new finals land.
 
 ## By category
 
@@ -17,12 +17,12 @@ Generated `2026-09-20T22:08:13.521682+00:00` by `src/build_evidence_registry.py`
 | logs | 15 | 0.0 |
 | metrics | 9 | 0.1 |
 | mirror-core | 663 | 2.4 |
-| other | 4 | 0.5 |
-| paper | 9 | 0.0 |
+| other | 43 | 0.6 |
+| paper | 11 | 0.0 |
 | provenance | 11 | 0.1 |
 | splits | 9 | 43.2 |
 | tables | 11 | 0.0 |
-| transport | 20 | 0.0 |
+| transport | 22 | 0.0 |
 
 ## Key artifacts (final status)
 

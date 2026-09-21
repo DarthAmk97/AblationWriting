@@ -27,3 +27,4 @@ hf_incoming/
 .tmp*
 hub_card*.md
 hub_cards_dump_README.md
+fetch_appendix/
